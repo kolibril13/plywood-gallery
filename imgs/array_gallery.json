@@ -1,0 +1,4 @@
+{
+  "example1640618478201348000.png": "#Checkboard\npixX= 15\npixY= 15\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\n",
+  "example1640618479643793000.png": "#from 4 regions\nregion0 = np.zeros( (10,8) )\nregion1 = np.ones( (10,7) )\nregion_top= np.concatenate( [region0,region1] , axis=1)\n\nregion2 = np.full( (5,5) , 2)\nregion3 = np.full( (5,10) ,3)\nregion_bottom = np.concatenate( [region2,region3] , axis=1)\n\narray= np.concatenate( [region_top,region_bottom] ,axis=0)\ndisp(array)\n"
+}
