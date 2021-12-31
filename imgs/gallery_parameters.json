@@ -1,0 +1,22 @@
+{
+  "example1640941082602345000.png": [
+    "Chapter1",
+    "#Checkboard\npixX= 15\npixY= 15\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\nprint(cell_counter)\n",
+    "border: 3px solid #34568B;"
+  ],
+  "example1640941082682901000.png": [
+    "Chapter1",
+    "#from 4 regions\narray = np.ones((15,15))+30\ndisp(array)\n",
+    "border: 3px solid #98B4D4;"
+  ],
+  "example1640941086070431000.png": [
+    "Chapter2",
+    "#Checkboard\npixX= 15\npixY= 15\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\nprint(cell_counter)\n",
+    "border: 3px solid #34568B;"
+  ],
+  "example1640941086150773000.png": [
+    "Chapter2",
+    "#from 4 regions\narray = np.ones((15,15))+30\ndisp(array)\n",
+    "border: 3px solid #98B4D4;"
+  ]
+}

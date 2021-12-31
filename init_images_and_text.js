@@ -7,28 +7,27 @@ document.getElementById('version_number').innerHTML = whole_string;
 
 
 var request1 = new XMLHttpRequest();
-request1.open("GET", "imgs/plot_gallery.json", false);
+request1.open("GET", "imgs/gallery_parameters.json", false);
 request1.send(null);
+var chapter_of_html = "NAME_OF_CHAPTER";
+var chapter_of_example
 var jsonData1 = JSON.parse(request1.responseText);
-document.writeln(' <h1>My Plots</h1>')
 for (let key of Object.keys(jsonData1)) {
-    document.write(`<img src='imgs/${key}' alt= '${jsonData1[key][0]}' onclick='myFunction(this);' class='image' style= '${jsonData1[key][1]}'>  `);
+    // json: key: imagepath, values: 0 -> chapter, 1 -> code, 2-> style
+    var path_of_example = key
+    var chapter_of_example =  jsonData1[key][0]
+    var codeblock_of_example = jsonData1[key][1]
+    var css_of_example = jsonData1[key][2]
+
+    if (chapter_of_html != chapter_of_example) {
+        chapter_of_html = chapter_of_example
+        document.writeln(`<h1> ${chapter_of_html} </h1>`)
+    }
+    document.write(`<img src='imgs/${path_of_example}' alt= '${codeblock_of_example}' onclick='myFunction(this);' class='image' style= '${css_of_example}'>  `);
 }
 
 
-
-
-// var request2 = new XMLHttpRequest();
-// request2.open("GET", "imgs/structuring_elements.json", false);
-// request2.send(null);
-// var jsonData4 = JSON.parse(request2.responseText);
-// document.writeln(' <h1>3D Structuring Elements</h1>')
-// for (let key of Object.keys(jsonData4)) {
-//     document.write(`<img src='imgs/${key}' alt= '${jsonData4[key]}' onclick='myFunction(this);' class='imagebig'> `);
-// }
-
-
-// add copy button to images
+// add code field
 function myFunction(imgs) {
     var name = imgs.alt;
     // navigator.clipboard.writeText(name); # copying is disabled for now
