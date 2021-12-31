@@ -50,6 +50,42 @@
             height: 15px;
         }
 
+        /* basic positioning */
+        .legend {
+            list-style: none;
+        }
+
+        .legend li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .legend span {
+            border: 1px solid #ccc;
+            float: left;
+            width: 12px;
+            height: 12px;
+            margin: 2px;
+        }
+
+        /* your colors */
+        .legend .superawesome {
+            background-color: #ED6A5A;
+        }
+
+        .legend .awesome {
+            background-color: #008DD5;
+        }
+
+        .legend .kindaawesome {
+            background-color: skyblue;
+        }
+
+        .legend .notawesome { 
+            /* DELETE THIS */
+            background-color: #000000;
+        }
+
 
         .div1 {
             width: 600px;
@@ -102,15 +138,21 @@ print("hello world")
     </div>
     <div class="box">
         <p id="version_number"></p>
-        <div class="box_title"></div>
-        <div class="box_normal"></div>
-        <div class="box_dependend"></div>
-
+        <ul class="legend">
+            <li><span class="superawesome"></span> Super Awesome</li> <br>
+            <li><span class="awesome"></span> Awesome</li> <br>
+            <li><span class="kindaawesome"></span> Kinda Awesome</li> <br>
+            <li><span class="notawesome"></span> Not Awesome</li>
+        </ul>
     </div>
 
     <script src="init_images_and_text.js"></script>
 
 
+
+    <div class="box_title"></div>
+    <div class="box_normal"></div>
+    <div class="box_dependend"></div>
 </body>
 
 </html>
