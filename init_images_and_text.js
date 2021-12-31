@@ -1,6 +1,6 @@
 // @ts-check
 
-var version_number =  "v0.0.1"
+var version_number = "v0.0.1"
 var whole_string = "version ".concat(version_number)
 
 document.getElementById('version_number').innerHTML = whole_string;
@@ -15,7 +15,7 @@ var jsonData1 = JSON.parse(request1.responseText);
 for (let key of Object.keys(jsonData1)) {
     // json: key: imagepath, values: 0 -> chapter, 1 -> code, 2-> style
     var path_of_example = key
-    var chapter_of_example =  jsonData1[key][0]
+    var chapter_of_example = jsonData1[key][0]
     var codeblock_of_example = jsonData1[key][1]
     var css_of_example = jsonData1[key][2]
 
