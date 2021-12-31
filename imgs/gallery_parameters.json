@@ -1,12 +1,32 @@
 {
-  "example1640947823244706000.png": [
-    "Chapter 1",
-    "#Checkboard\npixX= 15\npixY= 15\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\n",
-    "border: 3px solid #34568B;border: 10px solid #34568B"
+  "example1640951053086587000.png": [
+    "2D Arrays",
+    "\ndef disp(x, sep=\".0f\", annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)\n\n#Checkboard\npixX, pixY= (15, 15)\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\n",
+    "border: 3px solid #ED6A5A;border: 7px solid #ED6A5A"
   ],
-  "example1640947824007619000.png": [
-    "Chapter 1",
+  "example1640951053820697000.png": [
+    "2D Arrays",
     "#from 4 regions\narray = np.ones((15,15))+30\ndisp(array)\n",
-    "border: 3px solid #98B4D4;border: 10px solid #DDDDDD"
+    "border: 3px solid #008DD5;border: 3px solid #008DD5;"
+  ],
+  "example1640951054515040000.png": [
+    "2D Arrays",
+    "#Linear diagonal\narray = [[i+j for i in range(pixX)] for j in range(pixY)]\ndisp(array)\n",
+    "border: 3px solid #008DD5;"
+  ],
+  "example1640951055172777000.png": [
+    "2D Arrays",
+    "#Random\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)\n",
+    "border: 3px solid #008DD5;"
+  ],
+  "example1640951055727802000.png": [
+    "2D Arrays",
+    "#Gaussian\npixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep='.1f' )\n",
+    "border: 3px solid #008DD5;"
+  ],
+  "example1640951058541832000.png": [
+    "More dimensions",
+    "#Gaussian\npixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep='.1f' )\n",
+    "border: 3px solid #ED6A5A;border: 5px solid #ED6A5A; width: 150px"
   ]
 }
