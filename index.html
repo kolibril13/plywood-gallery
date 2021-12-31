@@ -26,8 +26,30 @@
         .box {
             position: absolute;
             top: 10px;
-            right: 10px;
+            right: 100px;
         }
+
+        .box_title {
+            border-radius: 5px;
+            background: #ED6A5A;
+            width: 15px;
+            height: 15px;
+        }
+
+        .box_normal {
+            border-radius: 5px;
+            background: #008DD5;
+            width: 15px;
+            height: 15px;
+        }
+
+        .box_dependend {
+            border-radius: 5px;
+            background: skyblue;
+            width: 15px;
+            height: 15px;
+        }
+
 
         .div1 {
             width: 600px;
@@ -56,7 +78,6 @@
         .image:hover {
             opacity: 0.4;
         }
-
     </style>
     <title>Python Example Gallery</title>
 
@@ -78,10 +99,13 @@
 i = 42
 print("hello world")
 </code></pre>
-
     </div>
     <div class="box">
         <p id="version_number"></p>
+        <div class="box_title"></div>
+        <div class="box_normal"></div>
+        <div class="box_dependend"></div>
+
     </div>
 
     <script src="init_images_and_text.js"></script>
