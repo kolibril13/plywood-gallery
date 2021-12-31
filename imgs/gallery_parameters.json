@@ -1,1 +1,12 @@
-{}
+{
+  "example1640947823244706000.png": [
+    "Chapter 1",
+    "#Checkboard\npixX= 15\npixY= 15\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\n",
+    "border: 3px solid #34568B;border: 10px solid #34568B"
+  ],
+  "example1640947824007619000.png": [
+    "Chapter 1",
+    "#from 4 regions\narray = np.ones((15,15))+30\ndisp(array)\n",
+    "border: 3px solid #98B4D4;border: 10px solid #DDDDDD"
+  ]
+}
