@@ -23,7 +23,7 @@ for (let key of Object.keys(jsonData1)) {
         chapter_of_html = chapter_of_example
         document.writeln(`<h1> ${chapter_of_html} </h1>`)
     }
-    document.write(`<img src='imgs/${path_of_example}' alt= '${codeblock_of_example}' onclick='myFunction(this);' class='image' style= '${css_of_example}'>  `);
+    document.write(`<img src='imgs/${path_of_example}' alt= '${codeblock_of_example}' onclick='myFunction(this);' class='gallery_entry' style= '${css_of_example}'>  `);
 }
 
 

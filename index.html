@@ -26,28 +26,13 @@
         .box {
             position: absolute;
             top: 10px;
-            right: 100px;
+            right: 10px;
         }
 
-        .box_title {
-            border-radius: 5px;
-            background: #ED6A5A;
-            width: 15px;
-            height: 15px;
-        }
-
-        .box_normal {
-            border-radius: 5px;
-            background: #008DD5;
-            width: 15px;
-            height: 15px;
-        }
-
-        .box_dependend {
-            border-radius: 5px;
-            background: skyblue;
-            width: 15px;
-            height: 15px;
+        .box2 {
+            position: absolute;
+            bottom: 10px;
+            left: -30px;
         }
 
         /* basic positioning */
@@ -61,7 +46,7 @@
         }
 
         .legend span {
-            border: 1px solid #ccc;
+            border-radius: 4px;
             float: left;
             width: 12px;
             height: 12px;
@@ -69,21 +54,16 @@
         }
 
         /* your colors */
-        .legend .superawesome {
+        .legend .label1 {
             background-color: #ED6A5A;
         }
 
-        .legend .awesome {
+        .legend .label2 {
             background-color: #008DD5;
         }
 
-        .legend .kindaawesome {
+        .legend .label3 {
             background-color: skyblue;
-        }
-
-        .legend .notawesome { 
-            /* DELETE THIS */
-            background-color: #000000;
         }
 
 
@@ -97,9 +77,10 @@
         .python {
             position: relative;
             z-index: 999;
+            width: 600px;
         }
 
-        .image {
+        .gallery_entry {
             opacity: 1;
             display: inline-block;
             border: 2px solid darkcyan;
@@ -111,8 +92,8 @@
             border-radius: 8px;
         }
 
-        .image:hover {
-            opacity: 0.4;
+        .gallery_entry:hover {
+            opacity: 0.7;
         }
     </style>
     <title>Python Example Gallery</title>
@@ -138,21 +119,21 @@ print("hello world")
     </div>
     <div class="box">
         <p id="version_number"></p>
-        <ul class="legend">
-            <li><span class="superawesome"></span> Super Awesome</li> <br>
-            <li><span class="awesome"></span> Awesome</li> <br>
-            <li><span class="kindaawesome"></span> Kinda Awesome</li> <br>
-            <li><span class="notawesome"></span> Not Awesome</li>
-        </ul>
     </div>
 
     <script src="init_images_and_text.js"></script>
 
+    <div class="box2">
+        <ul class="legend">
+            <li><span class="label1"></span> Import</li> <br>
+            <li><span class="label2"></span> Normal</li> <br>
+            <li><span class="label3"></span> Dependend</li> <br>
+        </ul>
+    </div>
 
 
-    <div class="box_title"></div>
-    <div class="box_normal"></div>
-    <div class="box_dependend"></div>
 </body>
+
+
 
 </html>
