@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
-        function myFunction(imgs) {
+        function display_code_from_gallery_cell(imgs) {
             var name = imgs.dataset.code;
             document.getElementById("info_field").innerHTML = name
             hljs.initHighlighting.called = false;
@@ -85,6 +85,7 @@
         }
 
         .python {
+            border-radius: 8px;
             position: relative;
             z-index: 999;
             width: 500px;
@@ -132,7 +133,7 @@
     <script src="init_images_and_text.js"></script>
     <div class="box2">
         <ul class="legend">
-            <li><span class="label1"></span> Import</li>
+            <li><span class="label1"></span> Header</li>
             <br>
             <li><span class="label2"></span> Normal</li>
             <br>
