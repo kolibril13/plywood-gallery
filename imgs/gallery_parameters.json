@@ -1,55 +1,55 @@
 {
-  "example1641127264664356000.png": [
+  "example1641135579489272000.png": [
     "2D Arrays",
-    "\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=\".0f\", annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)\n\n\n",
+    "\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)\n\n\n",
     "border: 3px solid #008DD5;border: 3px solid #ED6A5A"
   ],
-  "example1641127264782818000.png": [
+  "example1641135580313913000.png": [
     "2D Arrays",
     "\npixX, pixY= (15, 15)\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)\n",
     "border: 3px solid #008DD5;"
   ],
-  "example1641127264863992000.png": [
+  "example1641135581032637000.png": [
     "2D Arrays",
     "#Gaussian\npixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep='.1f' )\n",
     "border: 3px solid #008DD5;"
   ],
-  "example1641127264940419000.png": [
+  "example1641135582157123000.png": [
     "2D Arrays",
     "#from 4 regions\narray = np.ones((15,15))\ndisp(array)\n",
     "border: 3px solid #008DD5;"
   ],
-  "example1641127265017385000.png": [
+  "example1641135583053388000.png": [
     "2D Arrays",
     "array[4, 4]=2\n\ndisp(array)\n",
     "border: 3px solid #008DD5;border: 3px solid #A8DCF0"
   ],
-  "example1641127265092855000.png": [
+  "example1641135583954085000.png": [
     "2D Arrays",
     "array[6:10, 2:9]=2\ndisp(array)\n",
     "border: 3px solid #008DD5;border: 3px solid #A8DCF0"
   ],
-  "example1641127265172064000.png": [
+  "example1641135584917520000.png": [
     "2D Arrays",
     "#Random\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)\n",
     "border: 3px solid #008DD5;"
   ],
-  "example1641127265267230000.png": [
+  "example1641135587245205000.png": [
     "More dimensions",
     "\nimport scipy\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.8):\n    cmap = plt.get_cmap(\"YlGnBu\")\n\n    if ax == None:\n        fig = plt.figure(figsize=(16/2, 9/2))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(20, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n\n    ax.axis(\"off\")\n    if title != None:\n        ax.set_title(title, fontsize=30)\n\n\n",
     "border: 3px solid #008DD5;border: 3px solid #ED6A5A; width: 150px"
   ],
-  "example1641127265344373000.png": [
+  "example1641135587771977000.png": [
     "More dimensions",
-    "\n\n\n\nvoxelarrray = scipy.ndimage.generate_binary_structure(3, 1)\nplot_voxels(voxelarrray)\n",
+    "voxelarrray = scipy.ndimage.generate_binary_structure(3, 1)\nplot_voxels(voxelarrray)\n",
     "border: 3px solid #008DD5;width: 150px"
   ],
-  "example1641127265474577000.png": [
+  "example1641135588435067000.png": [
     "More dimensions",
     "voxelarrray = scipy.ndimage.generate_binary_structure(3, 2)\nplot_voxels(voxelarrray)\n",
     "border: 3px solid #008DD5;width: 150px"
   ],
-  "example1641127265577468000.png": [
+  "example1641135589246626000.png": [
     "More dimensions",
     "stacked_array = np.concatenate((voxelarrray, voxelarrray), axis=1)\nplot_voxels(stacked_array)\n",
     "border: 3px solid #008DD5;width: 150px; border: 3px solid skyblue"
