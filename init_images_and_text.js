@@ -30,6 +30,5 @@ for (let key of Object.keys(jsonData1)) {
 // add code field
 function myFunction(imgs) {
     var name = imgs.alt;
-    // navigator.clipboard.writeText(name); # copying is disabled for now
-    document.getElementById("info_field").innerHTML = name + " \n<b>is the corresponding code</b>"
+    document.getElementById("info_field").innerHTML = name 
 }
