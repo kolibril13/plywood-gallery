@@ -8,7 +8,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
+        function myFunction(imgs) {
+            var name = imgs.dataset.code;
+            document.getElementById("info_field").innerHTML = name
+            hljs.initHighlighting.called = false;
+            hljs.initHighlighting();
+        }
     </script>
+
     <style>
         h1 {
             margin-bottom: 0;
@@ -116,10 +123,7 @@
     <div class="div1">
         <pre>
         <b>Here is the corresponding code:</b>
-        <code class="python" id="info_field">
-i = 42
-print("hello world")
-        </code>
+        <code class="python" id="info_field"> <br> </code>
         </pre>
     </div>
     <div class="box">
