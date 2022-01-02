@@ -31,9 +31,11 @@
 
         .box2 {
             position: absolute;
-            bottom: 10px;
-            left: -30px;
+            top: 30px;
+            right: 20px;
         }
+
+
 
         /* basic positioning */
         .legend {
@@ -59,11 +61,11 @@
         }
 
         .legend .label2 {
-            background-color: #008DD5;
+            background-color: #007AB8;
         }
 
         .legend .label3 {
-            background-color: skyblue;
+            background-color: #A8DCF0;
         }
 
 
@@ -77,13 +79,12 @@
         .python {
             position: relative;
             z-index: 999;
-            width: 600px;
+            width: 500px;
         }
 
         .gallery_entry {
             opacity: 1;
             display: inline-block;
-            border: 2px solid darkcyan;
             width: 80px;
             height: auto;
             margin: 1px;
@@ -106,16 +107,25 @@
         <h2>Array Gallery</h2>
         Repo:
         <a href="https://github.com/kolibril13/plywood">https://github.com/kolibril13/plywood</a>
-
     </div>
-    <div class="div1">
 
-        <br>
-
-        <pre><code class="python" id="info_field"><b>Here is the corresponding code.</b>
+    <div >
+        <small>
+    <br>
+        <b> Info: </b> </br>
+        Normal cells are independend of each other, and can be run togehter with the import cell. <br>
+        A "Dependend" cell depends on the "Normal" cell left to it.<br>
+        A "Dependend" cell depends on another "Dependend" cell left to it.<br>
+    </small>
+    </div>
+        <div class="div1">
+        <pre>
+<code class="python" id="info_field">
+<b>Here is the corresponding code.</b>
 i = 42
 print("hello world")
-</code></pre>
+</code>
+</pre>
     </div>
     <div class="box">
         <p id="version_number"></p>
@@ -128,13 +138,10 @@ print("hello world")
             <li><span class="label1"></span> Import</li> <br>
             <li><span class="label2"></span> Normal</li> <br>
             <li><span class="label3"></span> Dependend</li> <br>
-            <br>
-            <b> Info:  </b> </br>
-            Normal cells are independend of each other, and can be run togehter with the import cell. <br>
-            A "Dependend" cell depends on the "Normal" cell left to it.<br>
-            A "Dependend" cell depends on another "Dependend" cell left to it.
         </ul>
     </div>
+
+
 
 
 </body>
