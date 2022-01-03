@@ -1,0 +1,14 @@
+[
+  {
+    "chapter": "Basics",
+    "image": "Mobjects_Text_000_Text1.png",
+    "code": "mob = Text(\"Hello\", color=WHITE)\n",
+    "css": "width: 100px;"
+  },
+  {
+    "chapter": "Basics",
+    "image": "Mobjects_Text_001_Text2.png",
+    "code": "mob = Text(\"World\", color=YELLOW,slant=ITALIC)\n",
+    "css": "width: 150px;"
+  }
+]
