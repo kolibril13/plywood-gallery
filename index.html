@@ -20,7 +20,6 @@
             hljs.initHighlighting();
         }
     </script>
-
     <style>
         h1 {
             margin-bottom: 0;
@@ -81,24 +80,37 @@
         .legend .label3 {
             background-color: #A8DCF0;
         }
-        
-        button{
+
+        button {
+            background-color: lightgrey;
             height: 18px;
             width: 18px;
             padding: 0px;
-
+            z-index: 400;
+            border-width: 0;
         }
+
         .div1 {
-            width: 600px;
+            width: 500px;
             height: 150px;
             border: 0;
             font-size: 10px;
+            position: relative;
+
+        }
+
+        .block2 {
+            position: absolute;
+            top: 13px;
+            right: -5px;
+            z-index: 400;
+
         }
 
         .python {
             border-radius: 8px;
             position: relative;
-            z-index: 999;
+            z-index: 100;
             width: 500px;
         }
 
@@ -128,16 +140,28 @@
     <div> <small>
             <br>
             <b> Info: </b>
-            Normal cells are independend of each other, and can be run togehter with the import cell. <br>
+            Normal cells are independend of each other, and can be run
+            togehter with the import cell. <br>
             A "Dependend" cell depends on the "Normal" cell left to it.<br>
-            A "Dependend" cell depends on another "Dependend" cell left to it.<br>
+            A "Dependend" cell depends on another "Dependend" cell left to
+            it.<br>
         </small> </div>
-        <div class="div1">
-            <pre>
-        <b>Here is the corresponding code:</b>
-        <code class="python" id="info_field"> <br> </code>
-        </pre>
-        </div>
+
+
+
+
+<div class="div1">
+<pre>
+<b>Here is the corresponding code:</b>
+<code class="python" id="info_field"> <br> </code>
+</pre>
+
+<div class='block2'><button type="button" onclick="RESET_CONTENT(this)">X</button></div>
+</div>
+
+
+
+
 
 
     <div class="box">
