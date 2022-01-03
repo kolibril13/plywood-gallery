@@ -12,4 +12,3 @@ some basic snippets for python plotting
 ## Todo:
 
 Skip first blank lines
-* make an exit button for code block
