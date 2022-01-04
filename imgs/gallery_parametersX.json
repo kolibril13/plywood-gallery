@@ -1,0 +1,62 @@
+{
+  "2D Arrays": [
+    [
+      {
+        "image": "example1641305400135089000.png",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)",
+        "css": "border: 3px solid #008DD5;border: 3px solid #ED6A5A"
+      }
+    ],
+    [
+      {
+        "image": "example1641305404543775000.png",
+        "code": "pixX, pixY= (15, 15)\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)",
+        "css": "border: 3px solid #008DD5;"
+      }
+    ],
+    [
+      {
+        "image": "example1641305406518108000.png",
+        "code": "pixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep=&#39;.1f&#39; )",
+        "css": "border: 3px solid #008DD5;"
+      }
+    ]
+  ],
+  "3D Arrays": [
+    [
+      {
+        "image": "example1641305426022496000.png",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)",
+        "css": "border: 3px solid #008DD5;border: 3px solid #ED6A5A"
+      }
+    ],
+    [
+      {
+        "image": "example1641305427062508000.png",
+        "code": "pixX, pixY= (15, 15)\narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)",
+        "css": "border: 3px solid #008DD5;"
+      }
+    ],
+    [
+      {
+        "image": "example1641305427542573000.png",
+        "code": "pixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep=&#39;.1f&#39; )",
+        "css": "border: 3px solid #008DD5;"
+      }
+    ],
+    [
+      {
+        "image": "example1641305428057163000.png",
+        "code": "array = np.ones((15,15))\ndisp(array)",
+        "css": "border: 3px solid #008DD5;"
+      }
+    ],
+    [
+      {
+        "image": "example1641305430308708000.png",
+        "code": "array = np.ones((15,15))\ndisp(array)",
+        "css": "border: 3px solid #008DD5;"
+      }
+    ]
+  ]
+}
