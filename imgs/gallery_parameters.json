@@ -2,49 +2,49 @@
   "3D Arrays": [
     [
       {
-        "image": "example1641310441502073000.png",
+        "image": "example01.png",
         "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)",
         "css": "border: 3px solid #008DD5;border: 3px solid #ED6A5A"
       }
     ],
     [
       {
-        "image": "example1641310441577816000.png",
+        "image": "example02.png",
         "code": "pixX, pixY= (15, 15) \narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)",
         "css": "border: 3px solid #008DD5;"
       }
     ],
     [
       {
-        "image": "example1641310441661277000.png",
+        "image": "example03.png",
         "code": "pixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep=&#39;.1f&#39; )",
         "css": "border: 3px solid #008DD5;"
       }
     ],
     [
       {
-        "image": "example1641310441739717000.png",
+        "image": "example04.png",
         "code": "array = np.ones((15,15))\ndisp(array)",
         "css": "border: 3px solid #008DD5;"
       }
     ],
     [
       {
-        "image": "example1641310441815392000.png",
+        "image": "example05.png",
         "code": "array[4, 4]=2\ndisp(array)",
         "css": "border: 3px solid #008DD5;border: 3px solid #A8DCF0"
       }
     ],
     [
       {
-        "image": "example1641310441892477000.png",
+        "image": "example06.png",
         "code": "array[6:10, 2:9]=2\ndisp(array)",
         "css": "border: 3px solid #008DD5;border: 3px solid #A8DCF0"
       }
     ],
     [
       {
-        "image": "example1641310441972189000.png",
+        "image": "example07.png",
         "code": "array = np.random.randint(0, 10, size=(15, 15))\ndisp(array)",
         "css": "border: 3px solid #008DD5;"
       }
@@ -53,28 +53,28 @@
   "More dimensions": [
     [
       {
-        "image": "example1641310442064660000.png",
+        "image": "exampleAA.png",
         "code": "import scipy\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.8):\n    cmap = plt.get_cmap(\"YlGnBu\")\n\n    if ax == None:\n        fig = plt.figure(figsize=(16/2, 9/2))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(20, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n\n    ax.axis(\"off\")\n    if title != None:\n        ax.set_title(title, fontsize=30)",
         "css": "border: 3px solid #008DD5;border: 3px solid #ED6A5A; width: 150px"
       }
     ],
     [
       {
-        "image": "example1641310442143743000.png",
+        "image": "exampleAB.png",
         "code": "voxelarrray = scipy.ndimage.generate_binary_structure(3, 1)\nplot_voxels(voxelarrray)",
         "css": "border: 3px solid #008DD5;width: 150px"
       }
     ],
     [
       {
-        "image": "example1641310442237583000.png",
+        "image": "exampleAC.png",
         "code": "voxelarrray = scipy.ndimage.generate_binary_structure(3, 2)\nplot_voxels(voxelarrray)",
         "css": "border: 3px solid #008DD5;width: 150px"
       }
     ],
     [
       {
-        "image": "example1641310442403253000.png",
+        "image": "exampleAD.png",
         "code": "stacked_array = np.concatenate((voxelarrray, voxelarrray), axis=1)\nplot_voxels(stacked_array)",
         "css": "border: 3px solid #008DD5;width: 150px; border: 3px solid skyblue"
       }
