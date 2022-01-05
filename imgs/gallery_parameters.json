@@ -106,21 +106,21 @@
       {
         "image": "ArrayFilteringSigma1.png",
         "code": "fig = plt.figure(figsize=(16, 9))\nax1 = fig.add_subplot(1, 1, 1, projection=\"3d\")\nvoxelarray2 = gaussian_filter(voxelarray, sigma=1)\nplot_voxels(voxelarray2,ax1)",
-        "css": "border: 3px solid #008DD5;width: 150px"
+        "css": "border: 3px solid #008DD5;width: 150px; border: 3px solid skyblue"
       }
     ],
     [
       {
         "image": "ArrayFilteringSigma2.png",
         "code": "fig = plt.figure(figsize=(16, 9))\nax1 = fig.add_subplot(1, 1, 1, projection=\"3d\")\nvoxelarray2 = gaussian_filter(voxelarray, sigma=2)\nplot_voxels(voxelarray2,ax1)",
-        "css": "border: 3px solid #008DD5;width: 150px"
+        "css": "border: 3px solid #008DD5;width: 150px; border: 3px solid skyblue"
       }
     ],
     [
       {
         "image": "ArrayFilteringSigma3.png",
         "code": "fig = plt.figure(figsize=(16, 9))\nax1 = fig.add_subplot(1, 1, 1, projection=\"3d\")\nvoxelarray2 = gaussian_filter(voxelarray, sigma=3)\nplot_voxels(voxelarray2,ax1)",
-        "css": "border: 3px solid #008DD5;width: 150px"
+        "css": "border: 3px solid #008DD5;width: 150px; border: 3px solid skyblue"
       }
     ]
   ]
