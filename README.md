@@ -11,7 +11,7 @@ Add your code to `gallery.ipynb`.
 Open `index.html`  
 Start coding! 
 
-# Intended workflow:
+# Intended workflow
 
 Add the **`%%capture_png`** magic in Jupyter cells and the output images will automatically and in real time be added to your gallery.   
 There will be two phases of building the gallery, the *preparation phase* and the *deployment phase.*
@@ -91,16 +91,16 @@ This new gallery approach as the potential to declutter graphical examples drast
 Of course, writing a plywood style gallery adds an extra layer of completity, but the the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they where looking for.
 
 
-# Outlook:
+# Outlook
 As soon as you have your gallery, it will be easy to create vs Code extensions from it:  
 *Add Screenrecording Here*
 
 
 
-# Tips and Tricks:
+# Tips and Tricks
 
 * Best you run the notebook in a jupyter notebook instance and open the website seperate (e.g. with splitscreen or second monitor) to keep track of the live updates.
 
 * Multiple notebooks can be used for the same gallery
 
-# How it works:
+# How it works
