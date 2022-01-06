@@ -13,9 +13,8 @@ Start coding!
 
 # Intended workflow:
 
-* Add the **`%%capture_png`** magic in Jupyter cells and the output images will automatically and in real time be added to your gallery. 
-
-* there will be two phases of building the gallery: preparation phase & deployment phase
+Add the **`%%capture_png`** magic in Jupyter cells and the output images will automatically and in real time be added to your gallery.   
+There will be two phases of building the gallery: preparation phase & deployment phase
 
 ## 1. Preparation phase
 
