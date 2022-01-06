@@ -55,7 +55,7 @@
       {
         "image": "exampleAA.png",
         "code": "import scipy\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.8, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16/2, 9/2))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect = aspect) \n    if title:\n        ax.set_title(title, fontsize=30)\n\ncmap = plt.get_cmap(\"YlGnBu\")",
-        "css": "border: 3px solid #007AB8;border: 3px solid #ED6A5A; width: 150px"
+        "css": "border: 3px solid #ED6A5A;width: 150px"
       }
     ],
     [
@@ -76,7 +76,7 @@
       {
         "image": "exampleAD.png",
         "code": "stacked_array = np.concatenate((voxelarrray, voxelarrray), axis=1)\nplot_voxels(stacked_array , aspect=(1,2,1))",
-        "css": "border: 3px solid #007AB8;width: 150px; border: 3px solid skyblue;"
+        "css": "border: 3px solid #A8DCF0;width: 150px;"
       }
     ]
   ],
@@ -85,7 +85,7 @@
       {
         "image": "HeaderGauss.png",
         "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.ndimage import gaussian_filter\n\ndef make_voxelarray(grids = 2,boxs = 5):\n    voxelarray = np.zeros((boxs * grids, boxs * grids, boxs * grids))\n\n    i = 9\n    for xi in range(0, 2):\n        for yi in range(0, 2):\n            for zi in range(0, 2):\n                voxelarray[\n                    xi * boxs: xi * boxs + boxs,\n                    yi * boxs: yi * boxs + boxs,\n                    zi * boxs: zi * boxs + boxs,\n                ] = i\n                i -= 1\n\n    voxelarray = np.uint8(voxelarray * 255 / 8)\n    return voxelarray\n\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.1, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16, 9))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect = aspect) \n    if title:\n        ax.set_title(title, fontsize=30)\n\nplt.figure(figsize=(16, 9))",
-        "css": "border: 3px solid #007AB8;border: 3px solid #ED6A5A; width: 150px"
+        "css": "border: 3px solid #ED6A5A;width: 150px"
       }
     ],
     [
@@ -106,21 +106,21 @@
       {
         "image": "ArrayFilteringSigma1.png",
         "code": "voxelarray1 = gaussian_filter(voxelarray, sigma=1)\nplot_voxels(voxelarray1)",
-        "css": "border: 3px solid #007AB8;width: 150px; border: 3px solid skyblue"
+        "css": "border: 3px solid #A8DCF0;width: 150px;"
       }
     ],
     [
       {
         "image": "ArrayFilteringSigma2.png",
         "code": "voxelarray2 = gaussian_filter(voxelarray, sigma=2)\nplot_voxels(voxelarray2)",
-        "css": "border: 3px solid #007AB8;width: 150px; border: 3px solid skyblue"
+        "css": "border: 3px solid #A8DCF0;width: 150px;"
       }
     ],
     [
       {
         "image": "ArrayFilteringSigma3.png",
         "code": "voxelarray3 = gaussian_filter(voxelarray, sigma=3)\nplot_voxels(voxelarray3)",
-        "css": "border: 3px solid #007AB8;width: 150px; border: 3px solid skyblue"
+        "css": "border: 3px solid #A8DCF0;width: 150px;"
       }
     ]
   ]
