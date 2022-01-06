@@ -55,14 +55,6 @@
         "css": "border: 3px solid #007AB8;",
         "code": "np.random.seed(42)\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)"
       }
-    ],
-    [
-      {
-        "image_path": "2D Arrays_Header1.png",
-        "celltype": "Header",
-        "css": "border: 3px solid #ED6A5A;",
-        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)"
-      }
     ]
   ],
   "3D Arrays": [
