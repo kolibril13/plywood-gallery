@@ -22,7 +22,7 @@ During the preparation phase, you can tinker around your cells and debug them an
 
 Every single cell run will create a new entery in the plywood gallery, so running cell A and cell B  in the order AABABB will also display the cells in the order AABABB and no previous cells will be overwritten.
 This behaviour can be also used to have an visual version control system of your notebook execution history.
-This is nothing else then a visual notebook execution history and therefore can be used as a version control systems about how your plots and graphics evolve over the preparation process. 
+This is nothing else than a visual notebook execution history and therefore can be used as a version control systems about how your plots and graphics evolve over the preparation process. 
 
 There is no "replace plywood gallery entery" yet, but might be implemented in future, that would render AABABB to AB.
 
@@ -81,18 +81,20 @@ Define imports and make definitions of functions
 * **Normal:**
 Show usage of imports and functions that you've made in the header cell. WARNING: All normal cells should ALWAYS be independent of each other. Try to not change variables in these cells, and if you have to, make sure to not use them in other normal cells agian. If you need to use them again, make sure to rest their value before adding another "Normal cell". This is crutial, because a user should always be able to run the cell in the combination "Header+Normal"
 * **Dependend**:  
-The purpose of this cell is to show slight changes of function calls or post-processing of what happend in a "Normal cell". It should only have a very few lines of code, and only change as few parameters as possible. That makes it possible, to see the slight visual adjustments in plots, and then easyly associate the codechanges with the visual changes. "Dependend" Cells can be run in the combination "Header+Normal+Dependend", but also "Header+Normal+Dependend+Dependend".
+The purpose of this cell is to show slight changes of function calls or post-processing of what happend in a "Normal cell". It should only have a very few lines of code, and only change as few parameters as possible. That makes it possible, to see the slight visual adjustments in plots, and than easyly associate the codechanges with the visual changes. "Dependend" Cells can be run in the combination "Header+Normal+Dependend", but also "Header+Normal+Dependend+Dependend".
 
 
 
-**SideNote**: Currently, Sphinx documentation suffers from cluttering: Most useres want to have one line of code to see how to apply 
-As this adds an extra layer of complexity in the writing process of documentation, the benefit can be tremendous:
-
+**Side Note: Why is this useful?** 
+Current sphinx documentation of scipy, matplotlib, scikit image etc. have really nice examples, but they might complex and convoluted (E.g. [this matplotlib example](https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py)   with 91 lines of code).
+This new gallery approach as the potential to declutter graphical examples drastically, by splitting them into small chuncs that are easy to gasp. The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in depth, there is still the Header cell.
+Of course, writing a plywood style gallery adds an extra layer of completity, but the the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they where looking for.
 
 
 # Outlook:
 As soon as you have your gallery, it will be easy to create vs Code extensions from it:  
 *Add Screenrecording Here*
+
 
 
 # Tips and Tricks:
