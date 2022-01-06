@@ -14,7 +14,7 @@ Start coding!
 # Intended workflow:
 
 Add the **`%%capture_png`** magic in Jupyter cells and the output images will automatically and in real time be added to your gallery.   
-There will be two phases of building the gallery: preparation phase & deployment phase
+There will be two phases of building the gallery, the *preparation phase* and the *deployment phase.*
 
 ## 1. Preparation phase
 
@@ -68,8 +68,8 @@ import matplotlib.pyplot as plt
 plt.plot([1,2],[10,20])
 ```
 This will generate the file `imgs/2D_Arrays_001_MyExample.png`. Note that plywood makes sure that file names are unique and can be easily sorted in the file explorer.
-Running this cell again would generate `imgs/2D_Arrays_002_MyExample.png`. 
-**--style**:
+Running this cell again would generate `imgs/2D_Arrays_002_MyExample.png`.   
+**--style**:  
 Change the gallery enteries size, border width or whatever is possible in css!  
 **--celltype**:    
 This is 
