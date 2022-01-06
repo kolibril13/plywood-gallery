@@ -2,7 +2,7 @@
   "2D Arrays": [
     [
       {
-        "image_path": "2D Arrays_Header1.png",
+        "image_path": "2D_Arrays_Header1.png",
         "celltype": "Header",
         "css": "border: 3px solid #ED6A5A;",
         "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)"
@@ -10,7 +10,7 @@
     ],
     [
       {
-        "image_path": "2D Arrays_Chess.png",
+        "image_path": "2D_Arrays_Chess.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;",
         "code": "pixX, pixY= (15, 15) \narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
@@ -18,7 +18,7 @@
     ],
     [
       {
-        "image_path": "2D Arrays_Gauss.png",
+        "image_path": "2D_Arrays_Gauss.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;",
         "code": "pixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep=&#39;.1f&#39; )"
@@ -26,7 +26,7 @@
     ],
     [
       {
-        "image_path": "2D Arrays_Empty.png",
+        "image_path": "2D_Arrays_Empty.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;",
         "code": "array = np.ones((15,15))\ndisp(array)"
@@ -34,7 +34,7 @@
     ],
     [
       {
-        "image_path": "2D Arrays_EmptyAndElement.png",
+        "image_path": "2D_Arrays_EmptyAndElement.png",
         "celltype": "Dependend",
         "css": "border: 3px solid #A8DCF0;",
         "code": "array[4, 4]=2\ndisp(array)"
@@ -42,7 +42,7 @@
     ],
     [
       {
-        "image_path": "2D Arrays_EmptyAndTwoElements.png",
+        "image_path": "2D_Arrays_EmptyAndTwoElements.png",
         "celltype": "Dependend",
         "css": "border: 3px solid #A8DCF0;",
         "code": "array[6:10, 2:9]=2\ndisp(array)"
@@ -50,7 +50,7 @@
     ],
     [
       {
-        "image_path": "2D Arrays_Random.png",
+        "image_path": "2D_Arrays_Random.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;",
         "code": "np.random.seed(42)\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)"
@@ -60,7 +60,7 @@
   "3D Arrays": [
     [
       {
-        "image_path": "3D Arrays_Header2.png",
+        "image_path": "3D_Arrays_Header2.png",
         "celltype": "Header",
         "css": "border: 3px solid #ED6A5A;width: 150px",
         "code": "import scipy\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.8, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16/2, 9/2))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect = aspect) \n    if title:\n        ax.set_title(title, fontsize=30)\n\ncmap = plt.get_cmap(\"YlGnBu\")"
@@ -68,7 +68,7 @@
     ],
     [
       {
-        "image_path": "3D Arrays_BinaryStructure1.png",
+        "image_path": "3D_Arrays_BinaryStructure1.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;width: 150px",
         "code": "voxelarrray = scipy.ndimage.generate_binary_structure(3, 1)\nplot_voxels(voxelarrray)"
@@ -76,7 +76,7 @@
     ],
     [
       {
-        "image_path": "3D Arrays_BinaryStructure2.png",
+        "image_path": "3D_Arrays_BinaryStructure2.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;width: 150px",
         "code": "voxelarrray = scipy.ndimage.generate_binary_structure(3, 2)\nplot_voxels(voxelarrray)"
@@ -84,7 +84,7 @@
     ],
     [
       {
-        "image_path": "3D Arrays_BinaryStructureConcat.png",
+        "image_path": "3D_Arrays_BinaryStructureConcat.png",
         "celltype": "Dependend",
         "css": "border: 3px solid #A8DCF0;width: 150px;",
         "code": "stacked_array = np.concatenate((voxelarrray, voxelarrray), axis=1)\nplot_voxels(stacked_array , aspect=(1,2,1))"
