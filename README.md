@@ -78,7 +78,7 @@ This is
 
 
 # Outlook:
-As soon as you have your gallery, it will be easy to create vs Code extensions from it:
+As soon as you have your gallery, it will be easy to create vs Code extensions from it:  
 *Add Screenrecording Here*
 
 
