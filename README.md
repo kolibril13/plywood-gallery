@@ -6,9 +6,11 @@ This repo will turn your jupyter cell output images into a gallery html page, th
 
 ## Intended workflow:
 
-* Add the %%capture_png flag in Jupyter cells that you want to add to the gallery. 
+* Add the **`%%capture_png`** magic in Jupyter cells and the output images will automatically and in real time be added to your gallery. 
 
 * there will be two phases of building the gallery: preparation phase & deployment phase
+
+### 1. Preparation phase
 
 During the preparation phase, you can tinker around your cells and debug them and run them again and again.
 
@@ -18,7 +20,7 @@ This is nothing else then a visual notebook execution history and therefore can 
 
 There is no "replace plywood gallery entery" yet, but might be implemented in future, that would render AABABB to AB.
 
-2. The deployment phase
+### 2. Deployment phase
 
 When you want to publish your gallery notebook on Github pages, then first clean all cells from the preoparation phase with the chaptermanager  
 ```py
@@ -29,12 +31,12 @@ chaptermanager.remove("ChapterName")
 and all previous cells will be deleted.
 Next, restart the kernel and click "Run ALl".
 
-Why is kernel restart necessary?
+**Why is kernel restart necessary?**  
 In the deployment phase, it is very important that cells are executed from top to button with a fresh started kernel to avoid unwanted artifacts from the preperation phase.
 
 
 
-## Tips:
+## Tips and Tricks:
 
 Best you run the notebook in a jupyter notebook instance and open the website seperate (e.g. with splitscreen or second monitor) to keep track of the live updates.
 
