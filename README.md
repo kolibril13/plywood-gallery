@@ -80,7 +80,8 @@ Define imports and make definitions of functions
 
 * **Normal:**
 Show usage of imports and functions that you've made in the header cell. WARNING: All normal cells should ALWAYS be independent of each other. Try to not change variables in these cells, and if you have to, make sure to not use them in other normal cells agian. If you need to use them again, make sure to rest their value before adding another "Normal cell". This is crutial, because a user should always be able to run the cell in the combination "Header+Normal"
-* **Dependend**:
+* **Dependend**:  
+The purpose of this cell is to show slight changes of function calls or post-processing of what happend in a "Normal cell". It should only have a very few lines of code, and only change as few parameters as possible. That makes it possible, to see the slight visual adjustments in plots, and then easyly associate the codechanges with the visual changes. "Dependend" Cells can be run in the combination "Header+Normal+Dependend", but also "Header+Normal+Dependend+Dependend".
 
 
 
