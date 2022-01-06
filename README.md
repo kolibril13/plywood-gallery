@@ -74,17 +74,17 @@ Change the gallery enteries size, border width or whatever is possible in CSS!
 This is a very powerful feature that has to be used carefully.  
 Here is their purpose:  
 
-* **Header:**
+* **Header:**  
 Define imports and make definitions of functions
 
-* **Normal:**
+* **Normal:**  
 Show usage of imports and functions that you've made in the header cell. WARNING: All normal cells should ALWAYS be independent of each other. Try to not change variables in these cells, and if you have to, make sure to not use them in other normal cells again. If you need to use them again, make sure to rest their value before adding another "Normal cell". This is crucial because a user should always be able to run the cell in the combination "Header+Normal"
 * **Dependent**:  
 The purpose of this cell is to show slight changes of function calls or post-processing of what happened in a "Normal cell". It should only have very few lines of code and only change as few parameters as possible. That makes it possible, to see the slight visual adjustments in plots, and then easily associate the code changes with the visual changes. "Dependent" Cells can be run in the combination "Header+Normal+Dependent", but also "Header+Normal+Dependent+Dependent".
 
 
 
-**Side Note: Why is this useful?** 
+**Side Note: Why is this useful?**   
 Current sphinx documentation of scipy, matplotlib, scikit image, etc. have really nice examples, but they might be complex and convoluted (E.g. [this matplotlib example](https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py)   with 91 lines of code).
 This new gallery approach has the potential to declutter graphical examples drastically, by splitting them into small chunks that are easy to grasp. The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in-depth, there is still the Header cell.
 Of course, writing a plywood-style gallery adds an extra layer of complexity, but the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they were looking for.
