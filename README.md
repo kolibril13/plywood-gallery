@@ -89,12 +89,7 @@ The purpose of this cell is to show slight changes of function calls or post-pro
 Current sphinx documentation of scipy, matplotlib, scikit image etc. have really nice examples, but they might complex and convoluted (E.g. [this matplotlib example](https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py)   with 91 lines of code).
 This new gallery approach as the potential to declutter graphical examples drastically, by splitting them into small chuncs that are easy to gasp. The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in depth, there is still the Header cell.
 Of course, writing a plywood style gallery adds an extra layer of completity, but the the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they where looking for.
-
-
-# Outlook
-As soon as you have your gallery, it will be easy to create vs Code extensions from it:  
-*Add Screenrecording Here*
-
+Furthermore, one does not have to make a sphinx build to see how the example looks in the gallery, it gets added in realtime.
 
 
 # Tips and Tricks
@@ -103,4 +98,13 @@ As soon as you have your gallery, it will be easy to create vs Code extensions f
 
 * Multiple notebooks can be used for the same gallery
 
+* When you want one line of your jupyter cell to be executed, but not to be added to the gallery, simply add the comment `#NOT` in the end of this code line.
+
+# Outlook
+As soon as you have your gallery, it will be easy to create vs Code extensions from it:  
+*Add Screenrecording Here*
+
+
 # How it works
+Jupyter writes image to path and adds information about image_path, style, celltype and corresponding code into a josn file.  
+This json file is read by javascript and the elements are places on an html page.
