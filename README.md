@@ -72,9 +72,21 @@ Running this cell again would generate `imgs/2D_Arrays_002_MyExample.png`.
 **--style**:  
 Change the gallery enteries size, border width or whatever is possible in css!  
 **--celltype**:    
-This is 
+This is a very powerful feature that has to be used carefully.  
+Here is their purpose:  
+
+* **Header:**
+Define imports and make definitions of functions
+
+* **Normal:**
+Show usage of imports and functions that you've made in the header cell. WARNING: All normal cells should ALWAYS be independent of each other. Try to not change variables in these cells, and if you have to, make sure to not use them in other normal cells agian. If you need to use them again, make sure to rest their value before adding another "Normal cell". This is crutial, because a user should always be able to run the cell in the combination "Header+Normal"
+* **Dependend**:
+
+
 
 **SideNote**: Currently, Sphinx documentation suffers from cluttering: Most useres want to have one line of code to see how to apply 
+As this adds an extra layer of complexity in the writing process of documentation, the benefit can be tremendous:
+
 
 
 # Outlook:
