@@ -62,12 +62,12 @@ One can run the `%%capture_png` with three arguments:
 **--path**:  
 A basic cell can look like this:
 ```py
-%%capture_png --path imgs/MyExample.png
+%%capture_png --path MyExample.png
 import matplotlib.pyplot as plt
 plt.plot([1,2],[10,20])
 ```
-This will generate the file `imgs/2D_Arrays_001_MyExample.png`. Note that plywood makes sure that file names are unique and can be easily sorted in the file explorer.
-Running this cell again would generate `imgs/2D_Arrays_002_MyExample.png`.   
+This will generate the file `gallery_assets/2D_Arrays_001_MyExample.png`. Note that plywood makes sure that file names are unique and can be easily sorted in the file explorer.
+Running this cell again would generate `gallery_assets/2D_Arrays_002_MyExample.png`.   
 **--style**:  
 Change the gallery enteries size, border width or whatever is possible in CSS!  
 **--celltype**:    

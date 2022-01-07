@@ -1,17 +1,9 @@
+from __future__ import print_function
+from IPython.core.magic import (Magics, magics_class,
+                                cell_magic)
 import json
-import os
-import shutil
-import time
-from base64 import b64decode
-from io import BytesIO
-from IPython import get_ipython
 from IPython.core.magic import register_cell_magic
-
 from pathlib import Path
-import matplotlib.pyplot as plt
-import numpy as np
-import PIL
-import seaborn as sns
 
 
 def rmtree(f: Path):
@@ -21,6 +13,7 @@ def rmtree(f: Path):
         for child in f.iterdir():
             rmtree(child)
         f.rmdir()
+
 
 class ChapterManager:
     def clean_all(path):
@@ -36,10 +29,25 @@ class ChapterManager:
         with open(joson_file_path, "w") as jsonFile:
             json.dump({}, jsonFile, indent=2)
 
-    def clean(path,chapter):
+    def init_chapter(chapter):
+        """Initilizes the first chapter"""
+        raise NotImplementedError
+
+    def clean(path, chapter):
         """clean only one specific chapter"""
         raise NotImplementedError
 
-    def sort(path,chapter):
+    def sort(path, chapter):
         """Sort chapters in a certain way"""
         raise NotImplementedError
+
+
+@magics_class
+class CapturePngTEST(Magics):
+    """Here comes the magic, syntax is like here:  https://ipython.readthedocs.io/en/stable/config/custommagics.html
+    """
+    @cell_magic
+    def capture_png_test(self, line, cell):
+        "my cell magic"
+        print("hello Test magic")
+        #return line, cell
