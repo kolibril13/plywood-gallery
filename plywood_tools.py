@@ -13,6 +13,7 @@ import numpy as np
 import PIL
 import seaborn as sns
 
+
 def rmtree(f: Path):
     if f.is_file():
         f.unlink()
@@ -21,16 +22,15 @@ def rmtree(f: Path):
             rmtree(child)
         f.rmdir()
 
-# delete all previous files
-path = Path.cwd() / "gallery_assets"
-try:
-    rmtree(path)
-except:
-    pass
+def clean_all(path):
+    # delete all previous files
+    try:
+        rmtree(path)
+    except:
+        pass
 
-path.mkdir(parents=False, exist_ok=False)
-
-# create json file
-joson_file_path = "gallery_assets/gallery_parameters.json"
-with open(joson_file_path, "w") as jsonFile:
-    json.dump({}, jsonFile, indent=2)
+    path.mkdir(parents=False, exist_ok=False)
+    # create json file
+    joson_file_path = "gallery_assets/gallery_parameters.json"
+    with open(joson_file_path, "w") as jsonFile:
+        json.dump({}, jsonFile, indent=2)
