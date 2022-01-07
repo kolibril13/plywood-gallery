@@ -29,8 +29,8 @@ There is no "replace plywood gallery entry" yet, but might be implemented in the
 
 When you want to publish your gallery notebook e.g. on Github pages, then first clean all cells from the preoparation phase with the chaptermanager  
 ```py
-from plywood_gallery import chaptermanager
-chaptermanager.remove("ChapterName")
+from plywood_tools import ChapterManager
+ChapterManager.remove("ChapterName") # Not yet Implemented
 ```
 and all previous cells will be deleted.
 Next, restart the kernel and click "Run All".

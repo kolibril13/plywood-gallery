@@ -22,15 +22,24 @@ def rmtree(f: Path):
             rmtree(child)
         f.rmdir()
 
-def clean_all(path):
-    # delete all previous files
-    try:
-        rmtree(path)
-    except:
-        pass
+class ChapterManager:
+    def clean_all(path):
+        """Cleans the whole gallery_assets tree"""
+        try:
+            rmtree(path)
+        except:
+            pass
 
-    path.mkdir(parents=False, exist_ok=False)
-    # create json file
-    joson_file_path = "gallery_assets/gallery_parameters.json"
-    with open(joson_file_path, "w") as jsonFile:
-        json.dump({}, jsonFile, indent=2)
+        path.mkdir(parents=False, exist_ok=False)
+        # create json file
+        joson_file_path = "gallery_assets/gallery_parameters.json"
+        with open(joson_file_path, "w") as jsonFile:
+            json.dump({}, jsonFile, indent=2)
+
+    def clean(path,chapter):
+        """clean only one specific chapter"""
+        raise NotImplementedError
+
+    def sort(path,chapter):
+        """Sort chapters in a certain way"""
+        raise NotImplementedError
