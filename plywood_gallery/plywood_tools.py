@@ -3,6 +3,8 @@ from IPython.core.magic import (Magics, magics_class,
                                 cell_magic)
 import json
 from pathlib import Path
+from IPython.core import magic_arguments
+from IPython.core.magic import register_cell_magic
 
 
 def rmtree(f: Path):
@@ -50,16 +52,37 @@ class ChapterManager:
             json.dump({}, jsonFile, indent=2)
 
 
-
 @magics_class
-class CapturePngTEST(Magics):
-    """Sends instruction to ChapterManager like increment cell counter, 
-
+class PlywoodGalleryMagic(Magics):
+    """Sends instruction to ChapterManager like increment cell counter.
     Here comes the magic, syntax is like here:  https://ipython.readthedocs.io/en/stable/config/custommagics.html
     """
     @cell_magic
+    @magic_arguments.magic_arguments()
+    @magic_arguments.argument(
+        "--path",
+        "-p",
+        default=None,
+        help=("the path where the image will be saved to"),
+    )
+    @magic_arguments.argument(
+        "--celltype",
+        "-c",
+        default="Normal",
+        help=("Cell can be of type 'Normal', 'Header', and 'Dependend'"),
+    )
+    @magic_arguments.argument(
+        "--style",
+        "-s",
+        default="",
+        help=("Add extra css style for the gallery enteries"),
+    )
     def capture_png_test(self, line, cell):
         "my cell magic"
+        args = magic_arguments.parse_argstring(PlywoodGalleryMagic.capture_png_test, line)
+        print(args.path)
+        print(args.celltype)
+
         ChapterManager.cell_counter +=1
         print("hello Test magic")
         # return line, cell
