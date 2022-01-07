@@ -85,7 +85,6 @@ class PlywoodGalleryMagic(Magics):
         default="",
         help=("Add extra css style for the gallery enteries"),
     )
-
     def capture_png_test(self, line, cell):
         """Saves the png image and the css style for the html page"""
         args = magic_arguments.parse_argstring(PlywoodGalleryMagic.capture_png_test, line)
@@ -168,9 +167,9 @@ class PlywoodGalleryMagic(Magics):
         data[chapter_name] = chapter_content
         with open(joson_file_path, "w") as jsonFile:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
-
+        print(ChapterManager.chapter_name)
         # save image
-        for output in result.outputs:
+        for output in result.outputs: #here broken
             display(output)
             data = output.data
             if 'image/png' in data:
