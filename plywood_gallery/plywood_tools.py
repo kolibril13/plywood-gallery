@@ -2,7 +2,6 @@ from __future__ import print_function
 from IPython.core.magic import (Magics, magics_class,
                                 cell_magic)
 import json
-from IPython.core.magic import register_cell_magic
 from pathlib import Path
 
 
@@ -22,8 +21,8 @@ class ChapterManager:
     path = Path.cwd() / "gallery_assets/" # cwd of folder where jupyter notebook is in
     json_path = Path.cwd() / "gallery_assets/gallery_parameters.json"
     @staticmethod
-    def init_chapter(new_chapter):
-        """Initilizes the first chapter"""
+    def set_chapter_name(new_chapter):
+        """Makes a new chapter"""
         ChapterManager.chapter_name =  new_chapter     
 
     @staticmethod
@@ -37,7 +36,7 @@ class ChapterManager:
         raise NotImplementedError
 
     @staticmethod
-    def clean_all():
+    def clean():
         path  = ChapterManager.path
         """Cleans the whole gallery_assets tree"""
         try:
