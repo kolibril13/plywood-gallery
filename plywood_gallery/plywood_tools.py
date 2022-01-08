@@ -11,6 +11,7 @@ from IPython.core.magic import (
     magics_class
 )
 from IPython.utils.capture import capture_output
+from IPython.display import display
 
 
 def rmtree(f: Path):
@@ -157,6 +158,8 @@ class PlywoodGalleryMagic(Magics):
         with open(joson_file_path, "w") as jsonFile:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
 
+
+        # save the output
         with capture_output(stdout=False, stderr=False, display=True) as result:
             self.shell.run_cell(cell)
 
