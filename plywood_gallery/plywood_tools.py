@@ -1,18 +1,17 @@
-from __future__ import print_function
-from IPython.core.magic import (Magics, magics_class,
-                                cell_magic)
 import json
-from pathlib import Path
-from IPython.core import magic_arguments
-from IPython.core.magic import register_cell_magic
-import json
-import time
 from base64 import b64decode
 from io import BytesIO, StringIO
-from IPython import get_ipython
-from IPython.core import magic_arguments
-from IPython.core.magic import register_cell_magic
+from pathlib import Path
+
 import PIL
+from IPython.core import magic_arguments
+from IPython.core.magic import (
+    Magics,
+    cell_magic,
+    magics_class
+)
+from IPython.utils.capture import capture_output
+
 
 def rmtree(f: Path):
     if f.is_file():
@@ -61,13 +60,6 @@ class ChapterManager:
 
 @magics_class
 class PlywoodGalleryMagic(Magics):
-    """
-    TODO: This is currently broken!
-    Sends instruction to ChapterManager like increment cell counter.
-    Here comes the magic, syntax is like here:  https://ipython.readthedocs.io/en/stable/config/custommagics.html
-    """
-  #  @needs_local_scope
-    @cell_magic
     @magic_arguments.magic_arguments()
     @magic_arguments.argument(
         "--path",
@@ -87,18 +79,19 @@ class PlywoodGalleryMagic(Magics):
         default="",
         help=("Add extra css style for the gallery enteries"),
     )
-    def capture_png_test(self, line, cell):
+    @cell_magic
+    def capture_png(self,line, cell):
         """Saves the png image and the css style for the html page"""
-        args = magic_arguments.parse_argstring(PlywoodGalleryMagic.capture_png_test, line)
+        args = magic_arguments.parse_argstring(PlywoodGalleryMagic.capture_png, line)
 
         postpath = args.path
         chapter_name= ChapterManager.chapter_name
-        joson_file_path =  ChapterManager.json_path
         chapter_name_underscore = chapter_name.replace(" ", "_")
+        joson_file_path = ChapterManager.json_path
         prepath = "gallery_assets"
-        global cell_counter
-        ChapterManager.cell_counter +=1
-        path = f"{prepath}/{chapter_name_underscore}_{ChapterManager.cell_counter:03}_{postpath}"  # include chaptername
+        ChapterManager.cell_counter += 1
+        # include chaptername
+        path = f"{prepath}/{chapter_name_underscore}_{ChapterManager.cell_counter:03}_{postpath}"
 
         #path = path.split(".png")[0] + str(time.time_ns()) + ".png"
         if not path:
@@ -121,12 +114,6 @@ class PlywoodGalleryMagic(Magics):
 
         # print(args.path,args.celltype, args.style)
 
-        # init capturing cell output
-        get_ipython().run_cell_magic(
-            'capture',
-            ' --no-stderr --no-stdout result',
-            cell
-        )
 
         raw_code_block = cell
         code_block = ""
@@ -163,15 +150,18 @@ class PlywoodGalleryMagic(Magics):
         chapter_content.append(
             [{"image_path": path,
             "celltype": args.celltype,
-            "css":style,
-            "code":code_block}])
+            "css": style,
+            "code": code_block}])
 
         data[chapter_name] = chapter_content
         with open(joson_file_path, "w") as jsonFile:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
-        print(ChapterManager.chapter_name)
+
+        with capture_output(stdout=False, stderr=False, display=True) as result:
+            self.shell.run_cell(cell)
+
         # save image
-        for output in result.outputs: #here broken
+        for output in result.outputs:
             display(output)
             data = output.data
             if 'image/png' in data:
