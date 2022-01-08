@@ -114,3 +114,11 @@ As soon as you have your gallery, it will be easy to create vs Code extensions f
 # How it works
 Jupyter writes the image to the path and adds information about image_path, style, cell type, and corresponding code into a JSON file.   
 This JSON file is read by javascript and the elements are placed on an HTML page.
+
+
+
+# Attribution
+
+Thanks to @christopher-besch for discussing the project architecture with me.
+Thanks to @krassowski for the help to caputre the png output images.
+Thanks to @Rickaym for some inspirations about the json files and VSCode related things.

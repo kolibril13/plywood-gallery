@@ -161,7 +161,7 @@ class PlywoodGalleryMagic(Magics):
 
         # save the output
         with capture_output(stdout=False, stderr=False, display=True) as result:
-            self.shell.run_cell(cell)
+            self.shell.run_cell(cell) # idea by @krassowski 
 
         # save image
         for output in result.outputs:
