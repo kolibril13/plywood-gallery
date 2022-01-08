@@ -88,7 +88,7 @@ class PlywoodGalleryMagic(Magics):
         chapter_name= ChapterManager.chapter_name
         chapter_name_underscore = chapter_name.replace(" ", "_")
         joson_file_path = ChapterManager.json_path
-        prepath = "gallery_assets"
+        prepath = ChapterManager.path.name # get the last child folder name
         ChapterManager.cell_counter += 1
         # include chaptername
         path = f"{prepath}/{chapter_name_underscore}_{ChapterManager.cell_counter:03}_{postpath}"
