@@ -61,7 +61,9 @@ class ChapterManager:
 
 @magics_class
 class PlywoodGalleryMagic(Magics):
-    """Sends instruction to ChapterManager like increment cell counter.
+    """
+    TODO: This is currently broken!
+    Sends instruction to ChapterManager like increment cell counter.
     Here comes the magic, syntax is like here:  https://ipython.readthedocs.io/en/stable/config/custommagics.html
     """
   #  @needs_local_scope
