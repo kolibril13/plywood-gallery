@@ -32,7 +32,12 @@ class ChapterManager:
     @staticmethod
     def set_chapter_name(new_chapter):
         """Makes a new chapter"""
-        ChapterManager.chapter_name =  new_chapter     
+        ChapterManager.chapter_name =  new_chapter    
+
+    @staticmethod
+    def reset_counter():
+        """Sets the counter back to 0"""
+        ChapterManager.cell_counter = 0
 
     @staticmethod
     def sort(chapter):
@@ -45,9 +50,9 @@ class ChapterManager:
         raise NotImplementedError
 
     @staticmethod
-    def clean():
-        path  = ChapterManager.path
+    def clean_all():
         """Cleans the whole gallery_assets tree"""
+        path  = ChapterManager.path
         try:
             rmtree(path)
         except:
@@ -112,9 +117,6 @@ class PlywoodGalleryMagic(Magics):
             raise ValueError('Not a valid cell type!')
 
         style = default_style + style
-
-        # print(args.path,args.celltype, args.style)
-
 
         raw_code_block = cell
         code_block = ""
