@@ -1,5 +1,8 @@
 # Todo:
 
+Think of dependencies:
+
+
 
 better path management
 thinking about good architecture
