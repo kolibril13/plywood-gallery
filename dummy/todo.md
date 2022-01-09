@@ -1,5 +1,13 @@
 # Todo:
 
+current project structure:
+
+* docs: index.html, generate_enteries.js , minimal_examply.ipynb, that are under actrive development and published on github pages
+* dummy: only debugging stuff, todo list
+* plywood_gallery: stuff, that will be delivered by pip install
+* template: index.html, generate_enteries.js , minimal_examply.ipynb that are used to generate quickstart examples for users.
+
+
 ## Think of dependencies:
 ```
 Ipython , Pillow, ipykernel
