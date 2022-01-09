@@ -1,7 +1,7 @@
 # plywood
 
 This repo will turn your jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent". 
-You can find an example gallery here: https://kolibril13.github.io/plywood/   
+You can find an example gallery here: https://kolibril13.github.io/plywood-gallery/   
 *Add Screenrecording Here*  
 **NOTE: Still work in progress, there might be breaking changes**
 
