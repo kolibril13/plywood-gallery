@@ -10,7 +10,7 @@ current project structure:
 
 ## Think of dependencies:
 ```
-Ipython , Pillow, ipykernel, matplotlib, scipy
+Ipython , Pillow, ipykernel, matplotlib, scipy, seaborn
 ```
 
 better path management
