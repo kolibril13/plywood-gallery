@@ -45,3 +45,12 @@ Add your code to `gallery.ipynb`.
 * add a copy button to the code cells
 * find better cell IDs so user does not have to give names
 * maybe add image alt
+
+
+
+# Possible usecase: 
+Gallery, 
+Part of sphinx documentation,
+Cheat Sheet,
+Version control
+Personal snippet generator
