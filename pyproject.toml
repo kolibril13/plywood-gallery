@@ -12,6 +12,7 @@ Pillow = "^9.0.0"
 ipykernel = "^6.6.1"
 
 [tool.poetry.dev-dependencies]
+matplotlib = "^3.5.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
