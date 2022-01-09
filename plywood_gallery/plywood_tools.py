@@ -71,7 +71,15 @@ class ChapterManager:
         with open(joson_file_path, "w") as jsonFile:
             json.dump({}, jsonFile, indent=2)
 
-
+    @staticmethod
+    def generate_json():
+        path  = ChapterManager.path
+        path.mkdir(parents=False, exist_ok=False)
+        # create json file
+        joson_file_path = ChapterManager.json_path
+        with open(joson_file_path, "w") as jsonFile:
+            json.dump({}, jsonFile, indent=2)
+    
 @magics_class
 class PlywoodGalleryMagic(Magics):
     @magic_arguments.magic_arguments()
