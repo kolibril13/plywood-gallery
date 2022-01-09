@@ -50,13 +50,18 @@ class ChapterManager:
         raise NotImplementedError
 
     @staticmethod
-    def clean_all():
-        """Cleans the whole gallery_assets tree"""
-        path  = ChapterManager.path
+    def clean_all(skip_warning= False):
+        """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first"""
+        print(f"This path and all its child elements will be removed:{ChapterManager.path}")
+        if input("are you sure? (y/n)") != "y":
+            raise ValueError("Could not delete folder because no permission")
+        else:
+            path  = ChapterManager.path
         try:
             rmtree(path)
         except:
-            pass
+            raise ValueError("Something went wrong")
+
         path.mkdir(parents=False, exist_ok=False)
         # create json file
         joson_file_path = ChapterManager.json_path
