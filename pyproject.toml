@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "plywood_gallery"
+version = "0.0.2"
+description = "Jupyter cell magic that turns images from cell output into a  gallery"
+authors = ["kolibril13"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+ipython = "^7.31.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
