@@ -1,8 +1,9 @@
 # Todo:
 
-Think of dependencies:
-
-
+## Think of dependencies:
+```
+Ipython , Pillow
+```
 
 better path management
 thinking about good architecture
