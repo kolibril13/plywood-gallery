@@ -8,22 +8,30 @@ current project structure:
 * template: index.html, generate_entries.js , minimal_examply.ipynb that are used to generate quickstart examples for users.
 
 
-# 
+# Important things to consider before release:
+* How to provide the html page? Best idea: 
+```
+pip install plywood_gallery
+```
+
+```py
+>>> from plywood_gallery import `quickstart`
+>>> quickstart()
+```
+
+Then got to `gallery.ipynb` and start coding.
 
 # Version number changes
 
 * in docs/javascript_entries.js
 * in template/javascript_entries.js
-
++ in Project.toml
 
 ## Think of dependencies:
 ```
 Ipython , Pillow, ipykernel, matplotlib, scipy, seaborn
 ```
 
-better path management
-thinking about good architecture
-think about the module syntax (maybe simpler example for starting?)
 
 
 
