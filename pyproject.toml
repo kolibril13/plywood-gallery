@@ -14,6 +14,7 @@ ipykernel = "^6.6.1"
 [tool.poetry.dev-dependencies]
 matplotlib = "^3.5.1"
 scipy = "^1.7.3"
+seaborn = "^0.11.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
