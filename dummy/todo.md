@@ -2,7 +2,7 @@
 
 ## Think of dependencies:
 ```
-Ipython , Pillow
+Ipython , Pillow, ipykernel
 ```
 
 better path management
