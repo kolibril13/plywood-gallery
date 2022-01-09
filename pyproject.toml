@@ -4,6 +4,8 @@ version = "0.0.2"
 description = "Jupyter cell magic that turns images from cell output into a  gallery"
 authors = ["kolibril13"]
 license = "MIT"
+include = ["template"]
+
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.11"

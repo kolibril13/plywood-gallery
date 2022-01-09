@@ -53,10 +53,13 @@ class ChapterManager:
     def clean_all(skip_warning= False):
         """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first"""
         print(f"This path and all its child elements will be removed:{ChapterManager.path}")
-        if input("are you sure? (y/n)") != "y":
-            raise ValueError("Could not delete folder because no permission")
-        else:
-            path  = ChapterManager.path
+        if not skip_warning:
+            if input("are you sure? (y/n)") != "y":
+                raise ValueError("Could not delete folder because no permission")
+            else:
+                pass
+
+        path  = ChapterManager.path
         try:
             rmtree(path)
         except:
