@@ -51,7 +51,8 @@ class ChapterManager:
 
     @staticmethod
     def clean_all(skip_warning= False):
-        """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first"""
+        """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first
+        After cleaning, a new json file will be created."""
         print(f"This path and all its child elements will be removed:{ChapterManager.path}")
         if not skip_warning:
             if input("are you sure? (y/n)") != "y":
@@ -65,14 +66,11 @@ class ChapterManager:
         except:
             raise ValueError("Something went wrong")
 
-        path.mkdir(parents=False, exist_ok=False)
-        # create json file
-        joson_file_path = ChapterManager.json_path
-        with open(joson_file_path, "w") as jsonFile:
-            json.dump({}, jsonFile, indent=2)
+        ChapterManager.generate_json()
 
     @staticmethod
     def generate_json():
+        """Creates a new empty json file for gallery information."""
         path  = ChapterManager.path
         path.mkdir(parents=False, exist_ok=False)
         # create json file
