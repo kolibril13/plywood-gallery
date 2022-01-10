@@ -165,10 +165,10 @@ class PlywoodGalleryMagic(Magics):
 
         chapter_content = data[chapter_name]
         chapter_content.append(
-            [{"image_path": path,
+            {"image_path": path,
             "celltype": args.celltype,
             "css": style,
-            "code": code_block}])
+            "code": code_block})
 
         data[chapter_name] = chapter_content
         with open(joson_file_path, "w") as jsonFile:

@@ -184,11 +184,10 @@
             document.writeln(`<h1> ${chapter_of_html} </h1>`)
 
             let chapter_content = jsonData1[key]
-            for (const entery of chapter_content) {
-                let element_dict = entery[0]
-                let path_of_example = element_dict["image_path"]
-                let codeblock_of_example = element_dict["code"]
-                let css_of_example = element_dict["css"]
+            for (const chap_element of chapter_content) {
+                let path_of_example = chap_element["image_path"]
+                let codeblock_of_example = chap_element["code"]
+                let css_of_example = chap_element["css"]
                 document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
             }
         }
