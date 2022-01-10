@@ -40,14 +40,51 @@ class ChapterManager:
         ChapterManager.cell_counter = 0
 
     @staticmethod
-    def sort(chapter):
-        """Sort chapters in a certain way"""
-        raise NotImplementedError
+    def sort(chapter_order):
+        """ Sort chapters according to the list that is given.
+        TODO: Make exception when name did not occur."""
+
+        # sort chapter
+        import json
+        new_order = chapter_order
+        joson_file_path = ChapterManager.json_path
+        with open(joson_file_path, "r") as jsonFile:
+            data = json.load(jsonFile)
+
+        temp_data = []
+
+        for chapter_name in new_order:
+            temp_data.append(data[chapter_name])
+            data.pop(chapter_name)
+
+        new_data = {}
+        for chapter_name , temp in zip(new_order, temp_data):
+            new_data[chapter_name] = temp
+
+        new_data.update(data)
+
+        with open(joson_file_path, "w") as jsonFile:
+            json.dump(new_data, jsonFile, indent=2, sort_keys=False)
 
     @staticmethod
-    def clean(chapter):
+    def clean(chapter_name):
         """clean only one specific chapter"""
-        raise NotImplementedError
+        with open(ChapterManager.json_path, "r") as jsonFile:
+            data = json.load(jsonFile)
+
+        image_list = []
+        chapter_content= data[chapter_name]
+        for entry in chapter_content:
+            image_list.append(entry["image_path"])
+
+        for image in image_list:
+            print(image)
+            whole_path = ChapterManager.path.parent / image
+            whole_path.unlink()
+
+        data.pop(chapter_name)
+        with open(ChapterManager.json_path, "w") as jsonFile:
+            json.dump(data, jsonFile, indent=2, sort_keys=False)
 
     @staticmethod
     def clean_all(skip_warning= False):
