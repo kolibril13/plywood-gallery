@@ -1,7 +1,7 @@
 {
   "X1": [
     {
-      "image_path": "gallery_assets/X1_001_Template.png",
+      "image_path": "gallery_assets/X1_004_Template.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;width:240px",
       "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20])"
@@ -9,13 +9,13 @@
   ],
   "X2": [
     {
-      "image_path": "gallery_assets/X2_002_Hello.png",
+      "image_path": "gallery_assets/X2_005_Hello.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;width:240px",
       "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c= \"r\")"
     },
     {
-      "image_path": "gallery_assets/X2_003_Hello22.png",
+      "image_path": "gallery_assets/X2_006_Hello22.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;width:240px",
       "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,-20], c= \"r\")"
