@@ -72,7 +72,7 @@ class ChapterManager:
     def generate_json():
         """Creates a new empty json file for gallery information."""
         path  = ChapterManager.path
-        path.mkdir(parents=False, exist_ok=False)
+        path.mkdir(parents=False, exist_ok=True)
         # create json file
         joson_file_path = ChapterManager.json_path
         with open(joson_file_path, "w") as jsonFile:

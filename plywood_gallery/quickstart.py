@@ -6,7 +6,7 @@ def quickstart():
         
     source_path = Path(__file__).resolve().parent / "template" 
     src1 =  source_path / "template_index.html"
-    src2 =  source_path / "new_gallery.ipynb"
+    src2 =  source_path / "template_gallery.ipynb"
     src3 =  source_path / "gallery_assets/gallery_parameters.json"
     src4 =  source_path / "gallery_assets/Template_Chapter_001_Template.png"
 
