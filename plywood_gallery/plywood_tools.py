@@ -80,8 +80,11 @@ class ChapterManager:
         for image in image_list:
             print(image)
             whole_path = ChapterManager.path.parent / image
-            whole_path.unlink()
-
+            try:
+                whole_path.unlink()
+            except:
+                pass
+            
         data.pop(chapter_name)
         with open(ChapterManager.json_path, "w") as jsonFile:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
