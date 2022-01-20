@@ -12,7 +12,7 @@ def quickstart():
 
 
     dest_path = Path.cwd()  
-    dest1 = dest_path / "new_index.html"
+    dest1 = dest_path / "index.html"
     dest2 = dest_path / "new_gallery.ipynb"
     dest3 = dest_path / "gallery_assets/gallery_parameters.json"
     dest4 = dest_path / "gallery_assets/Template_Chapter_001_Template.png"
