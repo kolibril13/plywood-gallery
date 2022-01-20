@@ -1,17 +1,17 @@
+import http.server
 import json
+import socketserver
+import threading
+import webbrowser
 from base64 import b64decode
 from io import BytesIO, StringIO
 from pathlib import Path
 
 import PIL
 from IPython.core import magic_arguments
-from IPython.core.magic import (
-    Magics,
-    cell_magic,
-    magics_class
-)
-from IPython.utils.capture import capture_output
+from IPython.core.magic import Magics, cell_magic, magics_class
 from IPython.display import display
+from IPython.utils.capture import capture_output
 
 
 def rmtree(f: Path):
@@ -22,6 +22,11 @@ def rmtree(f: Path):
             rmtree(child)
         f.rmdir()
 
+class SilentServer(http.server.SimpleHTTPRequestHandler): #Opens the webserver and makes sure that there is no long log message
+    protocol_version = "HTTP/1.0"
+
+    def log_message(self, *args):
+        pass
 
 class ChapterManager:
     """Recives instructions from  capture_png_test"""
@@ -29,6 +34,25 @@ class ChapterManager:
     chapter_name = ""
     path = Path.cwd() / "gallery_assets/" # cwd of folder where jupyter notebook is in
     json_path = Path.cwd() / "gallery_assets/gallery_parameters.json"
+
+    @staticmethod
+    def open_webpage(PORT = 8000):
+        def thread_function():
+            Handler = SilentServer
+            try: # make sure that server is not already running
+                with socketserver.TCPServer(("", PORT), Handler) as httpd:
+                    print("serving at port", PORT)
+                    httpd.serve_forever()
+            except OSError:
+                pass
+
+        mythread = threading.Thread(target=thread_function)
+        mythread.start()
+
+        url  = f"http://localhost:{PORT}/"
+        print(f"{url} will now be opened in your default browser. Closing this notebook will also shut the server")
+        webbrowser.open_new_tab(url)
+
     @staticmethod
     def set_chapter_name(new_chapter):
         """Makes a new chapter"""
