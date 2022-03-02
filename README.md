@@ -7,6 +7,12 @@ You can find an example gallery here: https://kolibril13.github.io/plywood-galle
 
 # Installation
 Download this repo. (pypi package might come soon)  
+Open a python script or python console and type:
+```py
+from plywood_gallery import quickstart
+quickstart()
+```
+All needed files are now generated.  
 Add your code to `gallery.ipynb`   
 Open `index.html`  
 Start coding! 
