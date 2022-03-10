@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <style>
+        h1 {
+            background-color: black;
+            color: white;
+            width: 500px;
+        }
+
+        .lower_code_div {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            top: -62px;
+            /* Why this??? */
+        }
+
+        /* general sibling combinator (~) */
+        #animation_starter:hover~#lower_code_ani {
+            animation-duration: 0.2s;
+            animation-delay: 0s;
+            animation-name: lower_animation;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes lower_animation {
+            0% {
+                left: 0px;
+                top: -62px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        .middle_code_div {
+            opacity: 0.0;
+        }
+
+        /* general sibling combinator (~) */
+        #animation_starter:hover~#middle_code_ani {
+            animation-name: middle_animation;
+            animation-duration: 0.2s;
+            animation-delay: 0.2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes middle_animation {
+            to {
+                opacity: 1;
+            }
+        }
+
+        code_canvas {
+            border: 2 px;
+        }
+
+        .python {
+            width: 500px;
+            border: 0;
+            padding: 5px;
+            margin: 0px;
+            font-size: 42px;
+        }
+
+        pre {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="animation_starter">Move mouse here!</h1>
+    <!-- %%for debugging, without python code formatting
+    <div style="font-size:42px;">
+        i=42 <br>
+        print("Hello")
+    </div>
+
+    <div class="middle_code_div" id="middle_code_ani" style="font-size:42px;">
+        print("blue") <br>
+    </div>
+
+    <div class="lower_code_div" id="lower_code_ani" style="font-size:42px;">
+        print("World") <br>
+        k = True
+    </div> -->
+
+    <div style="font-size:42px;">
+        <pre>
+            <code class="python" >i=42 <br>print("Hello")</code>
+        </pre>
+    </div>
+    <div class="middle_code_div" id="middle_code_ani" style="font-size:42px;">
+        <pre>
+            <code class="python">print("blue") </code> 
+        </pre>
+    </div>
+    <div class="lower_code_div" id="lower_code_ani" style="font-size:42px;">
+        <pre>
+            <code class="python">print("World") <br>k = True </code>
+        </pre>
+    </div>
+
+</body>
+
+</html>
+
