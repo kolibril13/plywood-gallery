@@ -121,6 +121,9 @@ As soon as you have your gallery, it will be easy to create vs Code extensions f
 Jupyter writes the image to the path and adds information about image_path, style, cell type, and corresponding code into a JSON file.   
 This JSON file is read by javascript and the elements are placed on an HTML page.
 
+# Notebook formatting
+Formatting with black can be done this way:
+`black --python-cell-magics capture_png  docs/gallery.ipynb`
 
 
 # Attribution
