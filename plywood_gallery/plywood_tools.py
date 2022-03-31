@@ -202,6 +202,8 @@ class PlywoodGalleryMagic(Magics):
         for codeline in StringIO(raw_code_block):
             if "#NOT" in codeline:
                 pass
+            if "# NOT" in codeline:
+                pass
             else:
                 code_block += codeline
 

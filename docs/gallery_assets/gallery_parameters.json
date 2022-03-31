@@ -4,37 +4,37 @@
       "image_path": "gallery_assets/2D_Arrays_001_Header1.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;",
-      "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\ndef disp(x, sep=&#39;.0f&#39;, annot=False,  figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)"
+      "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\n\ndef disp(x, sep=\".0f\", annot=False, figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False)"
     },
     {
       "image_path": "gallery_assets/2D_Arrays_002_Chess.png",
       "celltype": "Normal",
       "css": "border: 3px solid #007AB8;",
-      "code": "pixX, pixY= (15, 15) \narray = [[(i+j)%2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
+      "code": "pixX, pixY = (15, 15)\narray = [[(i + j) % 2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
     },
     {
       "image_path": "gallery_assets/2D_Arrays_003_Gauss.png",
       "celltype": "Normal",
       "css": "border: 3px solid #007AB8;",
-      "code": "pixX,pixY=(15,15)\nx, y = np.meshgrid(np.linspace(-1,1,pixX), np.linspace(-1,1,pixY))\nd = np.sqrt(x**2+y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-( (d-mu)**2 / ( 2.0 * sigma**2 ) ) )\ndisp(array, sep=&#39;.1f&#39; )"
+      "code": "pixX, pixY = (15, 15)\nx, y = np.meshgrid(np.linspace(-1, 1, pixX), np.linspace(-1, 1, pixY))\nd = np.sqrt(x**2 + y**2)\nsigma, mu = 1.0, 0.0\narray = np.exp(-((d - mu) ** 2 / (2.0 * sigma**2)))\ndisp(array, sep=\".1f\")"
     },
     {
       "image_path": "gallery_assets/2D_Arrays_004_Empty.png",
       "celltype": "Normal",
       "css": "border: 3px solid #007AB8;",
-      "code": "array = np.ones((15,15))\ndisp(array)"
+      "code": "array = np.ones((15, 15))\ndisp(array)"
     },
     {
       "image_path": "gallery_assets/2D_Arrays_005_EmptyAndElement.png",
       "celltype": "Dependend",
       "css": "border: 3px solid #A8DCF0;",
-      "code": "array[4, 4]=2\ndisp(array)"
+      "code": "array[4, 4] = 2\ndisp(array)"
     },
     {
       "image_path": "gallery_assets/2D_Arrays_006_EmptyAndTwoElements.png",
       "celltype": "Dependend",
       "css": "border: 3px solid #A8DCF0;",
-      "code": "array[6:10, 2:9]=2\ndisp(array)"
+      "code": "array[6:10, 2:9] = 2\ndisp(array)"
     },
     {
       "image_path": "gallery_assets/2D_Arrays_007_Random.png",
@@ -48,7 +48,7 @@
       "image_path": "gallery_assets/3D_Arrays_008_Header2.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;width: 150px",
-      "code": "import scipy\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.8, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16/2, 9/2))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect = aspect) \n    if title:\n        ax.set_title(title, fontsize=30)\n\ncmap = plt.get_cmap(\"YlGnBu\")"
+      "code": "import scipy\n\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.8, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16 / 2, 9 / 2))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors, edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect=aspect)\n    if title:\n        ax.set_title(title, fontsize=30)\n\n\ncmap = plt.get_cmap(\"YlGnBu\")"
     },
     {
       "image_path": "gallery_assets/3D_Arrays_009_BinaryStructure1.png",
@@ -66,7 +66,7 @@
       "image_path": "gallery_assets/3D_Arrays_011_BinaryStructureConcat.png",
       "celltype": "Dependend",
       "css": "border: 3px solid #A8DCF0;width: 150px;",
-      "code": "stacked_array = np.concatenate((voxelarrray, voxelarrray), axis=1)\nplot_voxels(stacked_array , aspect=(1,2,1))"
+      "code": "stacked_array = np.concatenate((voxelarrray, voxelarrray), axis=1)\nplot_voxels(stacked_array, aspect=(1, 2, 1))"
     }
   ],
   "Filtering": [
@@ -74,19 +74,19 @@
       "image_path": "gallery_assets/Filtering_012_Header1.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;width: 150px",
-      "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.ndimage import gaussian_filter\n\ndef make_voxelarray(grids = 2,boxs = 5):\n    voxelarray = np.zeros((boxs * grids, boxs * grids, boxs * grids))\n\n    i = 9\n    for xi in range(0, 2):\n        for yi in range(0, 2):\n            for zi in range(0, 2):\n                voxelarray[\n                    xi * boxs: xi * boxs + boxs,\n                    yi * boxs: yi * boxs + boxs,\n                    zi * boxs: zi * boxs + boxs,\n                ] = i\n                i -= 1\n\n    voxelarray = np.uint8(voxelarray * 255 / 8)\n    return voxelarray\n\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.1, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16, 9))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors,\n              edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect = aspect) \n    if title:\n        ax.set_title(title, fontsize=30)\n\nplt.figure(figsize=(16, 9))"
+      "code": "import matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.ndimage import gaussian_filter\n\n\ndef make_voxelarray(grids=2, boxs=5):\n    voxelarray = np.zeros((boxs * grids, boxs * grids, boxs * grids))\n\n    i = 9\n    for xi in range(0, 2):\n        for yi in range(0, 2):\n            for zi in range(0, 2):\n                voxelarray[\n                    xi * boxs : xi * boxs + boxs,\n                    yi * boxs : yi * boxs + boxs,\n                    zi * boxs : zi * boxs + boxs,\n                ] = i\n                i -= 1\n\n    voxelarray = np.uint8(voxelarray * 255 / 8)\n    return voxelarray\n\n\ndef plot_voxels(varray, ax=None, title=None, linewidth=0.1, aspect=None):\n\n    if ax == None:\n        fig = plt.figure(figsize=(16, 9))\n        ax = fig.add_subplot(1, 1, 1, projection=\"3d\")\n    ax.view_init(30, 200)\n    colors = cmap(varray)\n    ax.voxels(varray, facecolors=colors, edgecolor=\"black\", linewidth=linewidth)\n    ax.axis(\"off\")\n    if aspect:\n        ax.set_box_aspect(aspect=aspect)\n    if title:\n        ax.set_title(title, fontsize=30)\n\n\nplt.figure(figsize=(16, 9))"
     },
     {
       "image_path": "gallery_assets/Filtering_013_GreenArray.png",
       "celltype": "Normal",
       "css": "border: 3px solid #007AB8;width: 150px",
-      "code": "cmap = plt.get_cmap(\"YlGnBu\")\nvoxelarray= make_voxelarray()\nplot_voxels(voxelarray)"
+      "code": "cmap = plt.get_cmap(\"YlGnBu\")\nvoxelarray = make_voxelarray()\nplot_voxels(voxelarray)"
     },
     {
       "image_path": "gallery_assets/Filtering_014_RedArray.png",
       "celltype": "Normal",
       "css": "border: 3px solid #007AB8;width: 150px",
-      "code": "cmap = plt.get_cmap(\"OrRd_r\")\nvoxelarray= make_voxelarray()\nplot_voxels(voxelarray)"
+      "code": "cmap = plt.get_cmap(\"OrRd_r\")\nvoxelarray = make_voxelarray()\nplot_voxels(voxelarray)"
     },
     {
       "image_path": "gallery_assets/Filtering_015_RedArraySigma1.png",

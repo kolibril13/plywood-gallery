@@ -12,5 +12,6 @@
             "path": "/usr/bin/python3",
             "type": "pythonEnvironment"
         }
-    ]
+    ],
+    "python.formatting.provider": "black"
 }
