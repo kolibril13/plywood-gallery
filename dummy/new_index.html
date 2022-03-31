@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script>
-        hljs.initHighlightingOnLoad();
+        hljs.highlightAll();
         function display_code_from_gallery_cell(imgs) {
             var name = imgs.dataset.code;
             document.getElementById("info_field").innerHTML = name
-            hljs.initHighlighting.called = false;
-            hljs.initHighlighting();
+            hljs.highlightAll();
         }
         function reset_content(imgs) {
             document.getElementById("info_field").innerHTML = "<br><br>"
-            hljs.initHighlighting.called = false;
-            hljs.initHighlighting();
+            hljs.highlightAll();
         }
     </script>
     <style>
