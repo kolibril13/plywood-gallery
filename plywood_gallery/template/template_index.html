@@ -3,21 +3,18 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="HTMLBanner.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script>
-        hljs.initHighlightingOnLoad();
+        hljs.highlightAll();
         function display_code_from_gallery_cell(imgs) {
             var name = imgs.dataset.code;
             document.getElementById("info_field").innerHTML = name
-            hljs.initHighlighting.called = false;
-            hljs.initHighlighting();
+            hljs.highlightAll();
         }
         function reset_content(imgs) {
             document.getElementById("info_field").innerHTML = "<br><br>"
-            hljs.initHighlighting.called = false;
-            hljs.initHighlighting();
+            hljs.highlightAll();
         }
     </script>
     <style>
@@ -100,8 +97,8 @@
             height: 150px;
             border: 0;
             font-size: 10px;
-            position: relative;
-
+            position: sticky;
+            top: 0;
         }
 
         .block2 {
@@ -134,7 +131,7 @@
             opacity: 0.7;
         }
     </style>
-    <title>Plywood Gallery</title>
+    <title>{{ project_name }}</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- this plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
 
@@ -142,18 +139,18 @@
 
 <body style="background-color:#ece6e2;">
     <div style="text-align:center">
-        <h2>Plywood Gallery</h2> Repo: <a
-            href="https://github.com/kolibril13/plywood-gallery">https://github.com/kolibril13/plywood-gallery</a>
+        <h2>{{ project_name }}</h2> 
+        Repo: <a href=" {{repository_url}}">{{repository_url}}</a>
     </div>
     <div> <small>
-            <br>
-            <b> Info: </b>
-            Normal cells are independent of each other, and can be run
-            togehter with the import cell. <br>
-            A "Dependent" cell depends on the "Normal" cell left to it.<br>
-            A "Dependent" cell depends on another "Dependent" cell left to
-            it.<br>
-        </small> </div>
+        <br>
+        <b> Info: </b>
+        Normal cells are independent of each other, and can be run
+        togehter with the "Header" cell. <br>
+        A "Dependent" cell depends on the "Normal" cell left to it.<br>
+        A "Dependent" cell depends on another "Dependent" cell left to
+        it.<br>
+    </small> </div>
 
     <div class="div1">
         <pre>
