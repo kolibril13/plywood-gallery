@@ -2,6 +2,8 @@
 
 current project structure:
 
++ Use jinja2 Templates! :)
+
 * docs: index.html, generate_entries.js , minimal_examply.ipynb, that are under actrive development and published on github pages
 * dummy: only debugging stuff, todo list
 * plywood_gallery: stuff, that will be delivered by pip install
