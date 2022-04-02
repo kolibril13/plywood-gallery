@@ -48,3 +48,4 @@ def quickstart(destination_folder=False):
 
     dest5.write_bytes(src5.read_bytes())
     print(f"Sucessfuly created {dest5}")
+    print("Next step: Setup the html page with setup_notebook.ipynb")
