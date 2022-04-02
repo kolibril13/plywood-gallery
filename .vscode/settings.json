@@ -13,5 +13,7 @@
             "type": "pythonEnvironment"
         }
     ],
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "python.linting.flake8Args": ["--ignore=E501,W504"]
+
 }
