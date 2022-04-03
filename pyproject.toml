@@ -15,6 +15,7 @@ ipykernel = "^6.7.0"
 watchdog = "^2.1.6"
 Flask = "^2.0.2"
 Jinja2 = "^3.1.1"
+PyYAML = "^6.0"
 
 [tool.poetry.dev-dependencies]
 matplotlib = "^3.5.1"
