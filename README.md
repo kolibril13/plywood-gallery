@@ -12,13 +12,13 @@ Open a python script or python console and type:
 from plywood_gallery import quickstart
 quickstart()
 ```
-This will init the project structure files.
-Setup your project details in `html_configuration.yaml` e.g. project name, description, etc.
-Run the function `generate_html_from_jinja2_and_yaml` in the notebook  `html_configuration.ipynb`
+This will init the project structure files.  
+Setup your project details in `html_configuration.yaml` e.g. project name, description, etc.  
+Run the function `generate_html_from_jinja2_and_yaml` in the notebook  `html_configuration.ipynb`.  
 All needed files are now generated.  
-Add your code to `gallery.ipynb`   
-Open `index.html`  
-Start crafting! 
+Add your code to `gallery.ipynb`.   
+Open `index.html`.  
+Start crafting! ✔️
 
 # Intended workflow
 
