@@ -4,7 +4,7 @@ from pathlib import Path
 def quickstart(destination_folder=False):
 
     source_path = Path(__file__).resolve().parent / "template"
-    src0 = source_path / "template_setup_notebook.ipynb"
+    src0 = source_path / "template_html_configuration.ipynb"
     src1 = source_path / "template_gallery_notebook.ipynb"
     src2 = source_path / "gallery_assets/gallery_parameters.json"
     src3 = source_path / "gallery_assets/X1_001_Foo.png"
@@ -15,7 +15,7 @@ def quickstart(destination_folder=False):
         dest_path = Path.cwd()
     else:
         dest_path = destination_folder  # TODO: typecheck here!
-    dest0 = dest_path / "setup_notebook.ipynb"
+    dest0 = dest_path / "html_configuration.ipynb"
     dest1 = dest_path / "gallery.ipynb"
     dest2 = dest_path / "gallery_assets/gallery_parameters.json"
     dest3 = dest_path / "gallery_assets/X1_001_Foo.png"
