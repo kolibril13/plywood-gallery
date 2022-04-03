@@ -1,6 +1,6 @@
 from .plywood_tools import PlywoodGalleryMagic, ChapterManager
 from .quickstart import quickstart
-from .load_jinja import load_jinja2_template
+from .generate_html import generate_html_from_jinja2_and_yaml
 from IPython import get_ipython  # register cell magic
 
 try:
