@@ -12,7 +12,7 @@ def quickstart(destination_folder=False):
     src5 = source_path / "gallery_assets/X2_002_Bar.png"
     src6 = source_path / "gallery_assets/X2_003_HelloWorld.png"
 
-    if destination_folder == False:
+    if not destination_folder:
         dest_path = Path.cwd()
     else:
         dest_path = destination_folder  # TODO: typecheck here!
