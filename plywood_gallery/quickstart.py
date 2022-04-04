@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def quickstart(destination_folder=False):
+def quickstart(destination_folder=None):
 
     source_path = Path(__file__).resolve().parent / "quickstart_template"
     src0 = source_path / "template_html_configuration.yaml"
@@ -12,7 +12,7 @@ def quickstart(destination_folder=False):
     src5 = source_path / "gallery_assets/X2_002_Bar.png"
     src6 = source_path / "gallery_assets/X2_003_HelloWorld.png"
 
-    if not destination_folder:
+    if destination_folder is None:
         dest_path = Path.cwd()
     else:
         dest_path = destination_folder  # TODO: typecheck here!
