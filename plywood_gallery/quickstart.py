@@ -5,7 +5,7 @@ def quickstart(destination_folder=False):
 
     source_path = Path(__file__).resolve().parent / "quickstart_template"
     src0 = source_path / "template_html_configuration.yaml"
-    src1 = source_path / "template_html_configuration.ipynb"
+    src1 = source_path / "template_html_build.ipynb"
     src2 = source_path / "template_gallery_notebook.ipynb"
     src3 = source_path / "gallery_assets/gallery_parameters.json"
     src4 = source_path / "gallery_assets/X1_001_Foo.png"
@@ -18,7 +18,7 @@ def quickstart(destination_folder=False):
         dest_path = destination_folder  # TODO: typecheck here!
 
     dest0 = dest_path / "html_configuration.yaml"
-    dest1 = dest_path / "html_configuration.ipynb"
+    dest1 = dest_path / "html_build.ipynb"
     dest2 = dest_path / "gallery.ipynb"
     dest3 = dest_path / "gallery_assets/gallery_parameters.json"
     dest4 = dest_path / "gallery_assets/X1_001_Foo.png"

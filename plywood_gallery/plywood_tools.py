@@ -38,7 +38,7 @@ class ChapterManager:
     cell_counter = 0
     chapter_name = ""
     path = Path.cwd() / "gallery_assets/"  # cwd of folder where jupyter notebook is in
-    json_path = Path.cwd() / "gallery_assets/gallery_parameters.json"
+    json_path = Path.cwd() / path / "gallery_parameters.json"
 
     @staticmethod
     def open_webpage(PORT=8000):
@@ -64,6 +64,14 @@ class ChapterManager:
     def set_chapter_name(new_chapter):
         """Makes a new chapter"""
         ChapterManager.chapter_name = new_chapter
+
+
+    def set_assets_folder_name(new_assets_folder_name):
+        """Name for the folder where the images and the json file are saved in."""
+        path = Path.cwd() / new_assets_folder_name  # cwd of folder where jupyter notebook is in
+        ChapterManager.path = path
+        ChapterManager.json_path = Path.cwd() / path / "gallery_parameters.json"
+        ChapterManager.generate_json()
 
     @staticmethod
     def reset_counter():
@@ -140,7 +148,7 @@ class ChapterManager:
         except:
             raise ValueError("Something went wrong")
 
-        ChapterManager.generate_json()
+        ChapterManager.generate_json() # TODO remove this here maybe?!
 
     @staticmethod
     def generate_json():
@@ -151,6 +159,7 @@ class ChapterManager:
         joson_file_path = ChapterManager.json_path
         with open(joson_file_path, "w") as jsonFile:
             json.dump({}, jsonFile, indent=2)
+        print(f"Sucessfully created {ChapterManager.json_path}!🦫")
 
 
 @magics_class
