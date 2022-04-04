@@ -59,5 +59,5 @@ def quickstart(destination_folder=False):
         "Congratiulations, the trees were cut down and the plywood gallery project files are now in place. 🌲🪚"
     )
     print(
-        "Next step: Setup the `index.html` page with the notebook `html_configuration.ipynb`"
+        "Next step: Setup the `index.html` page with the notebook `html_build.ipynb`"
     )
