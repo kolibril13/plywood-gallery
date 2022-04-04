@@ -12,8 +12,9 @@
             document.getElementById("info_field").innerHTML = name
             hljs.highlightAll();
         }
+        // rest the code content block to an empty paragraph 
         function reset_content(imgs) {
-            document.getElementById("info_field").innerHTML = "<br><br>"
+            document.getElementById("info_field").innerHTML = "<p> <br></p>" //maybe better solution possible?
             hljs.highlightAll();
         }
     </script>
@@ -131,10 +132,7 @@
             opacity: 0.7;
         }
 
-        pre,
-        code {
-            white-space: pre-line;
-        }
+
     </style>
     <title>{{ project_name }}</title>
     <link rel="icon" type="image/x-icon" href="{{favicon}}">
@@ -156,10 +154,12 @@
     </div>
 
     <div class="div1">
-        <pre>
-        <b style="background-color:#ece6e2;">Here is the corresponding code:</b>
-            <code class="python" id="info_field"> <br> </code>
-        </pre>
+
+<!-- maybe better html indention possible for this pre block?  -->
+<pre>
+<b style="background-color:#ece6e2; ">Here is the corresponding code:</b>
+<code class="python" id="info_field"> <br> </code>
+</pre>
 
         <div class='block2'>
             <button type="button" onclick="reset_content(this)">X</button>
