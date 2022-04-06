@@ -1,6 +1,6 @@
 project_name: Plywood Gallery
 repository_url: https://github.com/kolibril13/plywood-gallery
-user_content_version: 0.15.1
+user_content_version: 1.22.3
 description: |
   Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
   A "Dependent" cell depends on the "Normal" cell left to it. <br>

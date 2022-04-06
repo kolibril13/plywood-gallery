@@ -1,12 +1,11 @@
-project_name: Plywood Gallery
+project_name: MyProject
 repository_url: https://github.com/kolibril13/plywood-gallery
-user_content_version: 0.0.1 # note: this is NOT the version of the plywood gallery (`core_version`) but the version of the gallery content.
+user_content_version: 0.4.15 #  Note: this is NOT the version of the plywood gallery, but the version of the plywood content. When the plywood gallery is made for napari v0.4.15 , name this e.g. 0.4.15
 description: |
   Normal cells are independent of each other, and can be run togehter with the "Header" cell. <br>
   A "Dependent" cell depends on the "Normal" cell left to it. <br>
   A "Dependent" cell depends on another "Dependent" cell left to it.
 favicon: favicon.ico
 custom_footer: |
-  <div style="position: fixed; bottom: 10px; right:10px"> <a href="code_animation_idea.html">
-  Link to code animating idea!</a></div>
+  <div style="position: fixed; bottom: 10px; right:10px"> Hello World! </a></div>
 gallary_parameters_path: gallery_assets/gallery_parameters.json
