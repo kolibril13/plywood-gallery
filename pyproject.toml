@@ -5,6 +5,11 @@ description = "Jupyter cell magic that turns images from cell output into a  gal
 authors = ["kolibril13"]
 license = "MIT"
 include = ["plywood_gallery/template"]
+readme="README.md"
+
+repository="https://github.com/kolibril13/plywood-gallery"
+homepage="https://kolibril13.github.io/plywood-gallery/"
+
 
 
 [tool.poetry.dependencies]
