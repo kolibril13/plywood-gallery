@@ -6,6 +6,7 @@ import pkg_resources
 
 __version__: str = pkg_resources.get_distribution(__name__).version
 
+print(f"Plywood Gallery v{__version__}")
 
 try:
     ipy = get_ipython()
