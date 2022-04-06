@@ -1,5 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
+import pkg_resources
 
 
 def load_jinja2_template():
@@ -26,6 +27,11 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
 
     project_name = html_configuration_parameter["project_name"]
     repository_url = html_configuration_parameter["repository_url"]
+    user_content_version = html_configuration_parameter["user_content_version"]
+
+    # TODO this works, but does not seem to be the best solution
+    core_version = pkg_resources.get_distribution("plywood_gallery").version
+
     description = html_configuration_parameter["description"]
     favicon = html_configuration_parameter["favicon"]
     custom_footer = html_configuration_parameter["custom_footer"]
@@ -36,6 +42,8 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
             template.render(
                 project_name=project_name,
                 repository_url=repository_url,
+                user_content_version=user_content_version,
+                core_version=core_version,
                 description=description,
                 favicon=favicon,
                 custom_footer=custom_footer,

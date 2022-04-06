@@ -42,7 +42,7 @@
 
         .box2 {
             position: absolute;
-            top: 20px;
+            top: 45px;
             right: 5px;
         }
 
@@ -166,13 +166,10 @@
     </div>
 
     <div class="box">
-        <p id="version_number"></p>
+        <p style="opacity: 0.8;"></p>  <tt>user content v.{{ user_content_version }} </tt><br>
+        <p style="opacity: 0.4;"> <tt> plywood core v.{{ core_version }}  </tt> </p>
     </div>
     <script>
-        let version_number = "v0.0.2"
-        let whole_string = "version ".concat(version_number)
-
-        document.getElementById('version_number').innerHTML = whole_string;
 
         let request1 = new XMLHttpRequest();
         request1.open("GET", "{{gallary_parameters_path}}", false);
