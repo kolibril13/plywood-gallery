@@ -1,24 +1,30 @@
 # Plywood Gallery 🌲🪚 -- 🪵🪓 --🚪
 
-This repo will turn your jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent". 
+This repo will turn your Jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent". 
 You can find an example gallery here: https://kolibril13.github.io/plywood-gallery/   
-*Add Screenrecording Here*  
+*Add Screen recording Here*  
 **NOTE: Still work in progress, there might be breaking changes**
 
 # Installation
-Download this repo. (pypi package will come soon)  
-Open a python script or python console and type:
-```py
-from plywood_gallery import quickstart
-quickstart()
-```
-This will init the project structure files.  
-Setup your project details in `html_configuration.yaml` e.g. project name, description, etc.  
-Run the function `generate_html_from_jinja2_and_yaml` in the notebook  `html_configuration.ipynb`.  
+
+* Install with  
+    ```
+    pip install plywood-gallery
+    ```
+
+* Open a python script or python console and type:
+    ```py
+    from plywood_gallery import quickstart
+    quickstart()
+    ```
+    This will init the project structure files.  
+* Set up your project details in `html_configuration.yaml` e.g. project name, description, etc.  
+* Run the function `generate_html_from_jinja2_and_yaml` in the notebook  `html_build.ipynb`.  
 All needed files are now generated.  
-Add your code to `gallery.ipynb`.   
-Open `index.html`.  
-Start crafting! ✔️
+* Open `index.html`.  Just loading index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import ChapterManager; ChapterManager.open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
+* Add your code to `gallery.ipynb`.   
+
+* Start crafting! ✔️
 
 # Intended workflow
 
@@ -30,20 +36,20 @@ There will be two phases of building the gallery, the *preparation phase* and th
 During the preparation phase, you can tinker around your cells and debug them and run them again and again.
 
 Every single cell run will create a new entry in the plywood gallery, so running cell A and cell B  in the order AABABB will also display the cells in the order AABABB and no previous cells will be overwritten. 
-This behavior can be also used to have a visual version control system of your notebook execution history. 
-This is nothing else than a visual notebook execution history and therefore can be used as a version control system about how your plots and graphics evolve over the preparation process.  
+This behavior can also be used to have a visual version control system of your notebook execution history. 
+This is nothing else than a visual notebook execution history, and therefore can be used as a version control system about how your plots and graphics evolve over the preparation process.  
 There is no "replace plywood gallery entry" yet, but might be implemented in the future, which would render AABABB to AB.
 
 ## 2. Deployment phase
 
-When you want to publish your gallery notebook e.g. on Github pages, then first clean all cells from the preoparation phase with the chaptermanager  
+When you want to publish your gallery notebook e.g. on GitHub pages, then first clean all cells from the preparation phase with the chaptermanager  
 ```py
 from plywood_tools import ChapterManager
 ChapterManager.clean_all() # cleans all cells from all chapters
-#ChapterManager.clean("Array 2D")  #cleans all cells from a specified chapter, Not yet Implemented
+#ChapterManager.clean("Array 2D")  # cleans all cells from a specified chapter
 ```
 
-and all previous cells will be deleted.
+And all previous cells will be deleted.
 Next, restart the kernel and click "Run All".
 
 **Why is the kernel restart necessary?**  
@@ -53,7 +59,7 @@ In the deployment phase, it is very important that cells are executed from top t
 
 **Chapters**  
 
-All gallery enteries need to be in chapters, chapter names are defined like this:
+All gallery entries need to be in chapters, chapter names are defined like this:
 ```py
 from plywood_gallery import ChapterManager
 ChapterManager.set_chapter_name("Array 2D")
@@ -85,7 +91,7 @@ plt.plot([1,2],[10,20])
 This will generate the file `gallery_assets/2D_Arrays_001_MyExample.png`. Note that plywood makes sure that file names are unique and can be easily sorted in the file explorer.
 Running this cell again would generate `gallery_assets/2D_Arrays_002_MyExample.png`.   
 **--style**:  
-Change the gallery enteries size, border width or whatever is possible in CSS!  
+Change the gallery entries size, border width or whatever is possible in CSS!  
 **--celltype**:    
 This is a very powerful feature that has to be used carefully.  
 Here is their purpose:  
@@ -101,7 +107,7 @@ The purpose of this cell is to show slight changes of function calls or post-pro
 
 
 **Side Note: Why is this useful?**   
-Current sphinx documentation of scipy, matplotlib, scikit image, etc. have really nice examples, but they might be complex and convoluted (E.g. [this matplotlib example](https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py)   with 91 lines of code).
+Current sphinx documentation of SciPy, Matplotlib, scikit-image, etc. have really nice examples, but they might be complex and convoluted (E.g. [this Matplotlib example](https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py)   with 91 lines of code).
 This new gallery approach has the potential to declutter graphical examples drastically, by splitting them into small chunks that are easy to grasp. The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in-depth, there is still the Header cell.
 Of course, writing a plywood-style gallery adds an extra layer of complexity, but the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they were looking for.
 Furthermore, one does not have to make a sphinx build to see how the example looks in the gallery, it gets added in real-time.
@@ -109,20 +115,21 @@ Furthermore, one does not have to make a sphinx build to see how the example loo
 
 # Tips and Tricks
 
-* Best you run the notebook in a jupyter notebook instance and open the website separate (e.g. with a split-screen or second monitor) to keep track of the live updates.
+* Best you run the notebook in a Jupyter notebook instance and open the website separate (e.g. with a split-screen or second monitor) to keep track of the live updates.
 
 * Multiple notebooks can be used for the same gallery
 
-* When you want one line of your jupyter cell to be executed, but not to be added to the gallery, simply add the comment `#NOT` at the end of this code line.
+* When you want one line of your Jupyter cell to be executed, but not to be added to the gallery, simply add the comment `#NOT` at the end of this code line.
 
-# Outlook
-As soon as you have your gallery, it will be easy to create vs Code extensions from it:  
-*Add Screenrecording Here*
+# VS Code Plugin
+Coming soon:
+Display your plywood galleries in the VS Code side panel with the VS Code extension. As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a VS Code opened python script or VS Code Jupyter notebook cell.
+*Add Screen recording Here*
 
 
 # How it works
 Jupyter writes the image to the path and adds information about image_path, style, cell type, and corresponding code into a JSON file.   
-This JSON file is read by javascript and the elements are placed on an HTML page.
+This JSON file is read by JavaScript and the elements are placed on an HTML page.
 
 # Notebook formatting
 Formatting with black can be done this way:
@@ -133,4 +140,4 @@ Formatting with black can be done this way:
 
 Thanks to @christopher-besch for discussing the project architecture with me.
 Thanks to @krassowski for the help to caputre the png output images.
-Thanks to @Rickaym for some inspirations about the json files and VSCode related things.
+Thanks to @Rickaym for some inspirations about the JSON files and VS Code related things.
