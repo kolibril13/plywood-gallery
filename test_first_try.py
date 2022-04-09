@@ -6,11 +6,10 @@ def fib(n: int) -> int:
 def test_fibonacci():
     assert fib(10) == 55
 
-# # content of test_sample.py
-# from plywood_gallery import ChapterManager
+from plywood_gallery import ChapterManager
 
 
-# def test_chaptermanager():
-#     ChapterManager.cell_counter = 12
-#     ChapterManager.reset_counter()
-#     assert ChapterManager.cell_counter == 0, "Chapter manager did not reset"
+def test_chaptermanager():
+    ChapterManager.cell_counter = 12
+    ChapterManager.reset_counter()
+    assert ChapterManager.cell_counter == 0, "Chapter manager did not reset"
