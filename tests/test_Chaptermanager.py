@@ -20,7 +20,6 @@ def test_chaptermanager_json_path():
 
     assert ChapterManager.json_path.name == "gallery_parameters.json"
     assert ChapterManager.json_path.parents[0].name == "gallery_assets"
-    assert ChapterManager.json_path.parents[1].name == "tests"
 
 
 # ChapterManager.set_assets_folder_name("my_new_example_assets") 
