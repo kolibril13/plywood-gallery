@@ -28,3 +28,4 @@ def test_chaptermanager_json_path():
     ChapterManager.clean_all(skip_warning=True)
 
     assert ChapterManager.json_path.exists() is False
+
