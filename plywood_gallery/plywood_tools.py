@@ -148,7 +148,7 @@ class ChapterManager:
         except:
             raise ValueError("Something went wrong")
 
-        ChapterManager.generate_json() # TODO remove this here maybe?!
+        # ChapterManager.generate_json() # TODO remove this here maybe?!
 
     @staticmethod
     def generate_json():
