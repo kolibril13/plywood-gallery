@@ -15,6 +15,9 @@ current project structure:
 * check all flake8 warnings 
 * Add screen recordings
 * Make YAML robust when parameter is not provided
+* implement tests
+* implement github actions
+* write documentation
 
 ## Whislist:
 * Copy button to the code cells
