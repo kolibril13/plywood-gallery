@@ -15,9 +15,10 @@ current project structure:
 * check all flake8 warnings 
 * Add screen recordings
 * Make YAML robust when parameter is not provided
-* implement tests
-* implement github actions
+* implement tests for chaptermanager
+* Maybe test the cell magic with a default notebook and https://github.com/chrisjsewell/pytest-notebook ?
 * write documentation
+* Hyperlinks to chapters
 
 ## Whislist:
 * Copy button to the code cells

@@ -65,13 +65,15 @@ class ChapterManager:
         """Makes a new chapter"""
         ChapterManager.chapter_name = new_chapter
 
-
     def set_assets_folder_name(new_assets_folder_name):
         """Name for the folder where the images and the json file are saved in."""
-        path = Path.cwd() / new_assets_folder_name  # cwd of folder where jupyter notebook is in
+        path = (
+            Path.cwd() / new_assets_folder_name
+        )  # cwd of folder where jupyter notebook is in
         ChapterManager.path = path
         ChapterManager.json_path = Path.cwd() / path / "gallery_parameters.json"
-        ChapterManager.generate_json()
+
+    # ChapterManager.generate_json() # remove this? -> yes
 
     @staticmethod
     def reset_counter():
