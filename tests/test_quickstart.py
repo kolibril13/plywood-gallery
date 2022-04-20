@@ -3,7 +3,7 @@ from plywood_gallery import quickstart
 from pathlib import Path
 
 
-def test_chaptermanager_counter():
+def test_ChapterConfig_counter():
     """Test the Template and cell magic"""
 
     temp_quickstart_data_dir = Path(__file__).parent.absolute() / "temp_quickstart_data"

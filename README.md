@@ -42,11 +42,11 @@ There is no "replace plywood gallery entry" yet, but might be implemented in the
 
 ## 2. Deployment phase
 
-When you want to publish your gallery notebook e.g. on GitHub pages, then first clean all cells from the preparation phase with the chaptermanager  
+When you want to publish your gallery notebook e.g. on GitHub pages, then first clean all cells from the preparation phase with the ChapterConfig  
 ```py
-from plywood_tools import ChapterManager
-ChapterManager.clean_all() # cleans all cells from all chapters
-#ChapterManager.clean("Array 2D")  # cleans all cells from a specified chapter
+from plywood_tools import ChapterConfig
+ChapterConfig.clean_all() # cleans all cells from all chapters
+#ChapterConfig.clean("Array 2D")  # cleans all cells from a specified chapter
 ```
 
 And all previous cells will be deleted.
@@ -61,14 +61,14 @@ In the deployment phase, it is very important that cells are executed from top t
 
 All gallery entries need to be in chapters, chapter names are defined like this:
 ```py
-from plywood_gallery import ChapterManager
-ChapterManager.set_chapter_name("Array 2D")
+from plywood_gallery import ChapterConfig
+ChapterConfig.set_chapter_name("Array 2D")
 ```
 As soon as there is a new name assigned, this new chapter will be added in the gallery below.
 Chapters can be sorted by 
 ```py
-from plywood_gallery import chaptermanager
-chaptermanager.sort(["2D Array", "3D Arrays"]) # Not yet Implemented
+from plywood_gallery import ChapterConfig
+ChapterConfig.sort(["2D Array", "3D Arrays"]) # Not yet Implemented
 ```
 
 **Cellmagic**  

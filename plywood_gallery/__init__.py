@@ -1,4 +1,4 @@
-from .plywood_tools import PlywoodGalleryMagic, ChapterManager
+from .plywood_tools import PlywoodGalleryMagic, ChapterConfig
 from .quickstart import quickstart
 from .generate_html import generate_html_from_jinja2_and_yaml
 from .browser_utils import open_webpage

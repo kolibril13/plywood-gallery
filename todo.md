@@ -11,10 +11,7 @@ current project structure:
 
 ## tasks:
 
-
-* split:
-    * webpage_utils
-* ChapterManager -> ChapterConfig
+* ChapterConfig -> ChapterConfig
 
 * setup auto release
 * check all flake8 warnings 

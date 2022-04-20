@@ -19,7 +19,7 @@ def rmtree(f: Path):
         f.rmdir()
 
 
-class ChapterManager:
+class ChapterConfig:
     """Recives instructions from  capture_png_test"""
 
     cell_counter = 0
@@ -30,22 +30,22 @@ class ChapterManager:
     @staticmethod
     def set_chapter_name(new_chapter):
         """Makes a new chapter"""
-        ChapterManager.chapter_name = new_chapter
+        ChapterConfig.chapter_name = new_chapter
 
     def set_assets_folder_name(new_assets_folder_name):
         """Name for the folder where the images and the json file are saved in."""
         path = (
             Path.cwd() / new_assets_folder_name
         )  # cwd of folder where jupyter notebook is in
-        ChapterManager.path = path
-        ChapterManager.json_path = Path.cwd() / path / "gallery_parameters.json"
+        ChapterConfig.path = path
+        ChapterConfig.json_path = Path.cwd() / path / "gallery_parameters.json"
 
-    # ChapterManager.generate_json() # remove this? -> yes
+    # ChapterConfig.generate_json() # remove this? -> yes
 
     @staticmethod
     def reset_counter():
         """Sets the counter back to 0"""
-        ChapterManager.cell_counter = 0
+        ChapterConfig.cell_counter = 0
 
     @staticmethod
     def sort(chapter_order):
@@ -56,7 +56,7 @@ class ChapterManager:
         import json
 
         new_order = chapter_order
-        joson_file_path = ChapterManager.json_path
+        joson_file_path = ChapterConfig.json_path
         with open(joson_file_path, "r") as jsonFile:
             data = json.load(jsonFile)
 
@@ -78,7 +78,7 @@ class ChapterManager:
     @staticmethod
     def clean(chapter_name):
         """clean only one specific chapter"""
-        with open(ChapterManager.json_path, "r") as jsonFile:
+        with open(ChapterConfig.json_path, "r") as jsonFile:
             data = json.load(jsonFile)
 
         image_list = []
@@ -88,14 +88,14 @@ class ChapterManager:
 
         for image in image_list:
             print(image)
-            whole_path = ChapterManager.path.parent / image
+            whole_path = ChapterConfig.path.parent / image
             try:
                 whole_path.unlink()
             except:
                 pass
 
         data.pop(chapter_name)
-        with open(ChapterManager.json_path, "w") as jsonFile:
+        with open(ChapterConfig.json_path, "w") as jsonFile:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
 
     @staticmethod
@@ -103,7 +103,7 @@ class ChapterManager:
         """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first
         After cleaning, a new json file will be created."""
         print(
-            f"This path and all its child elements will be removed:{ChapterManager.path}"
+            f"This path and all its child elements will be removed:{ChapterConfig.path}"
         )
         if not skip_warning:
             if input("are you sure? (y/n)") != "y":
@@ -111,24 +111,24 @@ class ChapterManager:
             else:
                 pass
 
-        path = ChapterManager.path
+        path = ChapterConfig.path
         try:
             rmtree(path)
         except:
             raise ValueError("Something went wrong")
 
-        # ChapterManager.generate_json() # TODO remove this here maybe?!
+        # ChapterConfig.generate_json() # TODO remove this here maybe?!
 
     @staticmethod
     def generate_json():
         """Creates a new empty json file for gallery information."""
-        path = ChapterManager.path
+        path = ChapterConfig.path
         path.mkdir(parents=False, exist_ok=True)
         # create json file
-        joson_file_path = ChapterManager.json_path
+        joson_file_path = ChapterConfig.json_path
         with open(joson_file_path, "w") as jsonFile:
             json.dump({}, jsonFile, indent=2)
-        print(f"Sucessfully created {ChapterManager.json_path}!🦫")
+        print(f"Sucessfully created {ChapterConfig.json_path}!🦫")
 
 
 @magics_class
@@ -158,13 +158,13 @@ class PlywoodGalleryMagic(Magics):
         args = magic_arguments.parse_argstring(PlywoodGalleryMagic.capture_png, line)
 
         postpath = args.path
-        chapter_name = ChapterManager.chapter_name
+        chapter_name = ChapterConfig.chapter_name
         chapter_name_underscore = chapter_name.replace(" ", "_")
-        joson_file_path = ChapterManager.json_path
-        prepath = ChapterManager.path.name  # get the last child folder name
-        ChapterManager.cell_counter += 1
+        joson_file_path = ChapterConfig.json_path
+        prepath = ChapterConfig.path.name  # get the last child folder name
+        ChapterConfig.cell_counter += 1
         # include chaptername
-        path = f"{prepath}/{chapter_name_underscore}_{ChapterManager.cell_counter:03}_{postpath}"
+        path = f"{prepath}/{chapter_name_underscore}_{ChapterConfig.cell_counter:03}_{postpath}"
 
         # path = path.split(".png")[0] + str(time.time_ns()) + ".png"
         if not path:
