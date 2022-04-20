@@ -82,7 +82,7 @@ class ChapterConfig:
             data = json.load(jsonFile)
 
         image_list = []
-        chapter_content = data[chapter_name] # throw except here if not exist
+        chapter_content = data[chapter_name]  # throw except here if not exist
         for entry in chapter_content:
             image_list.append(entry["image_path"])
 
@@ -91,7 +91,7 @@ class ChapterConfig:
             whole_path = ChapterConfig.path.parent / image
             try:
                 whole_path.unlink()
-            except: # TODO: is this needed at all?
+            except:  # TODO: is this needed at all?
                 pass
 
         data.pop(chapter_name)
@@ -115,7 +115,9 @@ class ChapterConfig:
         try:
             rmtree(path)
         except FileNotFoundError:
-            raise FileNotFoundError(f"The path {path} does not exist and therefore could not be deleted.")
+            raise FileNotFoundError(
+                f"The path {path} does not exist and therefore could not be deleted."
+            )
 
         # ChapterConfig.generate_json() # TODO remove this here maybe?!
 
@@ -215,7 +217,7 @@ class PlywoodGalleryMagic(Magics):
         with open(joson_file_path, "r") as jsonFile:
             data = json.load(jsonFile)
 
-        if not chapter_name in data:
+        if chapter_name not in data:
             data[chapter_name] = []
 
         chapter_content = data[chapter_name]
