@@ -11,14 +11,22 @@ current project structure:
 
 ## tasks:
 
-* Rename everywhere css -> style
+
+* split:
+    * webpage_utils
+* ChapterManager -> ChapterConfig
+
+* setup auto release
 * check all flake8 warnings 
 * Add screen recordings
 * Make YAML robust when parameter is not provided
-* implement tests for chaptermanager
+* Implementing more tests
 * Maybe test the cell magic with a default notebook and https://github.com/chrisjsewell/pytest-notebook ?
 * write documentation
 * Hyperlinks to chapters
+* Continue writing the readme
+* prof read readme again
+
 
 ## Whislist:
 * Copy button to the code cells
@@ -27,7 +35,7 @@ current project structure:
 * parameter "Titel" in JSON 
 * parameter "HoverText" in JSON  (?)
 * Filter cells by search bar
-* Lazy load images on Website visit
+* Websiteperformance: Lazy load images on Website visit
 * Animated code transitions
 
 
