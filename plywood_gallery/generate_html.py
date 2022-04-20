@@ -55,5 +55,5 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
             "Now you can start crafting your examples with the file gallery.ipynb and see the results in `index.html`!🚪 "
         )
         print(
-            "Just opening index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import ChapterManager; ChapterManager.open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VSCode to start the page with a server"
+            "Just opening index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import open_webpage; open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VSCode to start the page with a server"
         )

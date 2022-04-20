@@ -21,7 +21,7 @@ You can find an example gallery here: https://kolibril13.github.io/plywood-galle
 * Set up your project details in `html_configuration.yaml` e.g. project name, description, etc.  
 * Run the function `generate_html_from_jinja2_and_yaml` in the notebook  `html_build.ipynb`.  
 All needed files are now generated.  
-* Open `index.html`.  Just loading index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import ChapterManager; ChapterManager.open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
+* Open `index.html`.  Just loading index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import open_webpage; open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
 * Add your code to `gallery.ipynb`.   
 
 * Start crafting! ✔️
