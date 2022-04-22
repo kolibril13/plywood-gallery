@@ -14,13 +14,13 @@ def test_ChapterConfig_counter():
 def test_ChapterConfig_json_path():
 
     """Testing location of the json_file"""
-    assert ChapterConfig.json_path.name == "gallery_parameters_path.json"
+    assert ChapterConfig.json_path.name == "gallery_parameters.json"
     assert ChapterConfig.json_path.parents[0].name == "gallery_assets"
 
     # """Create file and test existence"""
     ChapterConfig.set_assets_folder_name("my_new_example_assets")
 
-    assert ChapterConfig.json_path.name == "gallery_parameters_path.json"
+    assert ChapterConfig.json_path.name == "gallery_parameters.json"
     assert ChapterConfig.json_path.parents[0].name == "my_new_example_assets"
 
     ChapterConfig.generate_json()

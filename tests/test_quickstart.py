@@ -15,7 +15,7 @@ def test_ChapterConfig_counter():
     Path(temp_quickstart_data_dir / "html_configuration.yaml").unlink()
     Path(temp_quickstart_data_dir / "html_build.ipynb").unlink()
     Path(temp_quickstart_data_dir / "gallery.ipynb").unlink()
-    Path(temp_quickstart_data_dir / "gallery_assets/gallery_parameters_path.json").unlink()
+    Path(temp_quickstart_data_dir / "gallery_assets/gallery_parameters.json").unlink()
     Path(temp_quickstart_data_dir / "gallery_assets/X1_001_Foo.png").unlink()
     Path(temp_quickstart_data_dir / "gallery_assets/X2_002_Bar.png").unlink()
     Path(temp_quickstart_data_dir / "gallery_assets/X2_003_HelloWorld.png").unlink()
