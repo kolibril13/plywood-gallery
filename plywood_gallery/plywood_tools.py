@@ -25,7 +25,7 @@ class ChapterConfig:
     cell_counter = 0
     chapter_name = ""
     path = Path.cwd() / "gallery_assets/"  # cwd of folder where jupyter notebook is in
-    json_path = Path.cwd() / path / "gallery_parameters.json"
+    json_path = Path.cwd() / path / "gallery_parameters_path.json"
 
     @staticmethod
     def set_chapter_name(new_chapter):
@@ -38,7 +38,7 @@ class ChapterConfig:
             Path.cwd() / new_assets_folder_name
         )  # cwd of folder where jupyter notebook is in
         ChapterConfig.path = path
-        ChapterConfig.json_path = Path.cwd() / path / "gallery_parameters.json"
+        ChapterConfig.json_path = Path.cwd() / path / "gallery_parameters_path.json"
 
     # ChapterConfig.generate_json() # remove this? -> yes
 
