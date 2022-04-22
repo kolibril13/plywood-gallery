@@ -119,8 +119,6 @@ class ChapterConfig:
                 f"The path {path} does not exist and therefore could not be deleted."
             )
 
-        # ChapterConfig.generate_json() # TODO remove this here maybe?!
-
     @staticmethod
     def generate_json():
         """Creates a new empty json file for gallery information."""
@@ -203,10 +201,13 @@ class PlywoodGalleryMagic(Magics):
             if "#ONLY" in codeline:
                 codeline = codeline.replace("#ONLY", "")
                 new_codeblock += codeline
+            if "# ONLY" in codeline:  # TODO Write Test for this
+                codeline = codeline.replace("# ONLY", "")
+                new_codeblock += codeline
             else:
                 pass
 
-        if new_codeblock:  # checks if there are lines that include "#ONLY"
+        if new_codeblock:  # checks if there are lines that include "#ONLY" OR "# ONLY"
             code_block = new_codeblock
 
         # make sure that javascript can read the single quote character
