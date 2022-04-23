@@ -35,7 +35,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
     description = html_configuration_parameter["description"]
     favicon = html_configuration_parameter["favicon"]
     custom_footer = html_configuration_parameter["custom_footer"]
-    gallary_parameters_path = html_configuration_parameter["gallary_parameters_path"]
+    gallery_parameters_path = html_configuration_parameter["gallery_parameters_path"]
 
     with open(index_html_file, "w") as fh:
         fh.write(
@@ -47,7 +47,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
                 description=description,
                 favicon=favicon,
                 custom_footer=custom_footer,
-                gallary_parameters_path=gallary_parameters_path,
+                gallery_parameters_path=gallery_parameters_path,
             )
         )
         print(f"Sucessfuly created {index_html_file}")

@@ -9,4 +9,4 @@ favicon: favicon.ico
 custom_footer: |
   <div style="position: fixed; bottom: 10px; right:10px"> <a href="code_animation_idea.html">
   Link to code animating idea!</a></div>
-gallary_parameters_path: gallery_assets/gallery_parameters.json
+gallery_parameters_path: gallery_assets/gallery_parameters.json
