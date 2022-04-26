@@ -1,5 +1,5 @@
 # this document is copied from https://github.com/marketplace/actions/install-poetry-action#testing
-name: test
+name: test infrastructure
 
 on:
   push:
