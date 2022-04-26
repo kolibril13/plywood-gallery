@@ -11,8 +11,8 @@ current project folder structure:
 
 ## tasks:
 
-* check all flake8 warnings 
 * setup auto release
+* check all flake8 warnings 
 * Add screen recordings
 * Make YAML robust when parameter is not provided
 * Implementing more tests
@@ -37,7 +37,14 @@ current project folder structure:
 * experimental_iterator_capture_png
 * Parameterslider for certain variables might be possible?
 * Plywood Notebooks with thre colors and hierarchical execution (tree-based execution, maybe with caching?)
-* 
+* Re-Execute PlywoodGallery with own variables in jupyter notebook to enable predictable coding, similar to https://github.com/lux-org/lux
+
+## pipe dreams
+
+A neural network that is trained by images as input data and code as prediction.
+Similar, to detexify https://detexify.kirelabs.org/classify.html , one can draw a picutre of the thing one wants to achieve (barplot, 3D view, scatter, etc) and Plywood will provide you possible code snippets to achieve this resul, similar to CodePilot.
+
+
 
 # Possible usecase: 
 Gallery,   
