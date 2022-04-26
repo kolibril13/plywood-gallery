@@ -52,4 +52,8 @@ Part of sphinx documentation,
 Cheat Sheet,  
 Version control  
 Personal snippet generator
-  
+
+All kinds of images can be used: 
+* For graphical output, best use the graphical output
+* For snippets without graphical output, use any placeholder image:
+Emoji combinations, bootstrap icons, a Landscape, your favorite cartoon character, cute  cats, image of your grandparents, any mnemonic aid that gives an association with the code snippet. 
