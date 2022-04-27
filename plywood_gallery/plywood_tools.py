@@ -10,143 +10,6 @@ from IPython.display import display
 from IPython.utils.capture import capture_output
 
 
-def rmtree(f: Path):
-    if f.is_file():
-        f.unlink()
-    else:
-        for child in f.iterdir():
-            rmtree(child)
-        f.rmdir()
-
-
-class ChapterConfig:
-    """Recives instructions from  capture_png_test"""
-
-    cell_counter = 0
-    chapter_name = ""
-    path = Path.cwd() / "gallery_assets/"  # cwd of folder where jupyter notebook is in
-    json_path = Path.cwd() / path / "gallery_parameters.json"
-
-    @staticmethod
-    def set_chapter_name(new_chapter):
-        """Makes a new chapter"""
-        ChapterConfig.chapter_name = new_chapter
-
-    def set_assets_folder_name(new_assets_folder_name):
-        """Name for the folder where the images and the json file are saved in."""
-        path = (
-            Path.cwd() / new_assets_folder_name
-        )  # cwd of folder where jupyter notebook is in
-        ChapterConfig.path = path
-        ChapterConfig.json_path = Path.cwd() / path / "gallery_parameters.json"
-
-    # ChapterConfig.generate_json() # remove this? -> yes
-
-    @staticmethod
-    def reset_counter():
-        """Sets the counter back to 0"""
-        ChapterConfig.cell_counter = 0
-
-    @staticmethod
-    def sort(chapter_order):
-        """Sort chapters according to the list that is given.
-        TODO: Make exception when name did not occur."""
-
-        # sort chapter
-        import json
-
-        new_order = chapter_order
-        joson_file_path = ChapterConfig.json_path
-        with open(joson_file_path, "r") as jsonFile:
-            data = json.load(jsonFile)
-
-        temp_data = []
-
-        for chapter_name in new_order:
-            temp_data.append(data[chapter_name])
-            data.pop(chapter_name)
-
-        new_data = {}
-        for chapter_name, temp in zip(new_order, temp_data):
-            new_data[chapter_name] = temp
-
-        new_data.update(data)
-
-        with open(joson_file_path, "w") as jsonFile:
-            json.dump(new_data, jsonFile, indent=2, sort_keys=False)
-
-    @staticmethod
-    def clean(chapter_name):
-        """clean only one specific chapter"""
-        with open(ChapterConfig.json_path, "r") as jsonFile:
-            data = json.load(jsonFile)
-
-        if chapter_name in data:
-            chapter_content = data[chapter_name]
-        else:
-            raise KeyError(
-                f"Cleaning the chapter '{chapter_name}' is not possible because it is not defined in the json file. Probably it got deleted already before."
-            )
-
-        for entry in chapter_content:
-            image = entry["image_path"]
-            whole_path = ChapterConfig.path.parent / image
-            try:
-                whole_path.unlink()
-            except FileNotFoundError:
-                raise FileNotFoundError(
-                    f"""It was not possible to delete '{whole_path.parts[-1]}' because this file occurs in the json file,
-                        however not on the disk. Probably images in the folder '/{ChapterConfig.json_path.parts[-2]}'
-                        got renamed without renaming the corresponding json entry. In this case, it's recomended
-                        to run the clean_all command once and re-execute the plywood gallery from scratch."""
-                )
-            print(
-                f"Deleted '{whole_path.parts[-1]}' from the folder '/{ChapterConfig.json_path.parts[-2]}' "
-            )
-
-        data.pop(chapter_name)
-
-        jp = ChapterConfig.json_path
-        print(f"Removed entry '{chapter_name}' from '{jp.relative_to(jp.parents[1])}'")
-
-        with open(ChapterConfig.json_path, "w") as jsonFile:
-            json.dump(data, jsonFile, indent=2, sort_keys=False)
-
-    @staticmethod
-    def clean_all(skip_warning=False):
-        """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first
-        After cleaning, a new json file will be created."""
-
-        path = ChapterConfig.path
-
-        print(f"This path and all its child elements will be removed:{path}")
-
-        if not skip_warning:
-            if input("are you sure? (y/n)") != "y":
-                raise ValueError("Could not delete folder because no permission")
-            else:
-                pass
-
-        try:
-            rmtree(path)
-            print(f"Deleted '/{path}' and all containing files and folder.")
-        except FileNotFoundError:
-            raise FileNotFoundError(
-                f"The path {path} does not exist and therefore could not be deleted."
-            )
-
-    @staticmethod
-    def generate_json():
-        """Creates a new empty json file for gallery information."""
-        path = ChapterConfig.path
-        path.mkdir(parents=False, exist_ok=True)
-        # create json file
-        joson_file_path = ChapterConfig.json_path
-        with open(joson_file_path, "w") as jsonFile:
-            json.dump({}, jsonFile, indent=2)
-        print(f"Sucessfully created {ChapterConfig.json_path}!🦫")
-
-
 @magics_class
 class PlywoodGalleryMagic(Magics):
     @magic_arguments.magic_arguments()
@@ -267,3 +130,141 @@ class PlywoodGalleryMagic(Magics):
                 bytes_io = BytesIO(png_bytes)
                 image = PIL.Image.open(bytes_io)
                 image.save(path, "png")
+
+
+class ChapterConfig:
+    """Recives instructions from  capture_png_test"""
+
+    cell_counter = 0
+    chapter_name = ""
+    path = Path.cwd() / "gallery_assets/"  # cwd of folder where jupyter notebook is in
+    json_path = Path.cwd() / path / "gallery_parameters.json"
+
+    @staticmethod
+    def set_chapter_name(new_chapter):
+        """Makes a new chapter"""
+        ChapterConfig.chapter_name = new_chapter
+
+    def set_assets_folder_name(new_assets_folder_name):
+        """Name for the folder where the images and the json file are saved in."""
+        path = (
+            Path.cwd() / new_assets_folder_name
+        )  # cwd of folder where jupyter notebook is in
+        ChapterConfig.path = path
+        ChapterConfig.json_path = Path.cwd() / path / "gallery_parameters.json"
+
+    # ChapterConfig.generate_json() # remove this? -> yes
+
+    @staticmethod
+    def reset_counter():
+        """Sets the counter back to 0"""
+        ChapterConfig.cell_counter = 0
+
+    @staticmethod
+    def sort(chapter_order):
+        """Sort chapters according to the list that is given.
+        TODO: Make exception when name did not occur."""
+
+        # sort chapter
+        import json
+
+        new_order = chapter_order
+        joson_file_path = ChapterConfig.json_path
+        with open(joson_file_path, "r") as jsonFile:
+            data = json.load(jsonFile)
+
+        temp_data = []
+
+        for chapter_name in new_order:
+            temp_data.append(data[chapter_name])
+            data.pop(chapter_name)
+
+        new_data = {}
+        for chapter_name, temp in zip(new_order, temp_data):
+            new_data[chapter_name] = temp
+
+        new_data.update(data)
+
+        with open(joson_file_path, "w") as jsonFile:
+            json.dump(new_data, jsonFile, indent=2, sort_keys=False)
+
+    @staticmethod
+    def clean(chapter_name):
+        """clean only one specific chapter"""
+        with open(ChapterConfig.json_path, "r") as jsonFile:
+            data = json.load(jsonFile)
+
+        if chapter_name in data:
+            chapter_content = data[chapter_name]
+        else:
+            raise KeyError(
+                f"Cleaning the chapter '{chapter_name}' is not possible because it is not defined in the json file. Probably it got deleted already before."
+            )
+
+        for entry in chapter_content:
+            image = entry["image_path"]
+            whole_path = ChapterConfig.path.parent / image
+            try:
+                whole_path.unlink()
+            except FileNotFoundError:
+                raise FileNotFoundError(
+                    f"""It was not possible to delete '{whole_path.parts[-1]}' because this file occurs in the json file,
+                        however not on the disk. Probably images in the folder '/{ChapterConfig.json_path.parts[-2]}'
+                        got renamed without renaming the corresponding json entry. In this case, it's recomended
+                        to run the clean_all command once and re-execute the plywood gallery from scratch."""
+                )
+            print(
+                f"Deleted '{whole_path.parts[-1]}' from the folder '/{ChapterConfig.json_path.parts[-2]}' "
+            )
+
+        data.pop(chapter_name)
+
+        jp = ChapterConfig.json_path
+        print(f"Removed entry '{chapter_name}' from '{jp.relative_to(jp.parents[1])}'")
+
+        with open(ChapterConfig.json_path, "w") as jsonFile:
+            json.dump(data, jsonFile, indent=2, sort_keys=False)
+
+    @staticmethod
+    def _rmtree(f: Path):
+        """Private method that deletes a folder and all its files and subfolders, used in clean_all"""
+        if f.is_file():
+            f.unlink()
+        else:
+            for child in f.iterdir():
+                ChapterConfig._rmtree(child)
+            f.rmdir()
+
+    @staticmethod
+    def clean_all(skip_warning=False):
+        """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first
+        After cleaning, a new json file will be created."""
+
+        path = ChapterConfig.path
+
+        print(f"This path and all its child elements will be removed:{path}")
+
+        if not skip_warning:
+            if input("are you sure? (y/n)") != "y":
+                raise ValueError("Could not delete folder because no permission")
+            else:
+                pass
+
+        try:
+            ChapterConfig._rmtree(path)
+            print(f"Deleted '{path}' and all containing files and folder.")
+        except FileNotFoundError:
+            raise FileNotFoundError(
+                f"The path {path} does not exist and therefore could not be deleted."
+            )
+
+    @staticmethod
+    def generate_json():
+        """Creates a new empty json file for gallery information."""
+        path = ChapterConfig.path
+        path.mkdir(parents=False, exist_ok=True)
+        # create json file
+        joson_file_path = ChapterConfig.json_path
+        with open(joson_file_path, "w") as jsonFile:
+            json.dump({}, jsonFile, indent=2)
+        print(f"Sucessfully created {ChapterConfig.json_path}!🦫")
