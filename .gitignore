@@ -132,3 +132,4 @@ dmypy.json
 
 plywood_gallery_env
 temp
+poetry.lock
