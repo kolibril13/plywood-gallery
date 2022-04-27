@@ -226,13 +226,13 @@ class ChapterConfig:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
 
     @staticmethod
-    def _rmtree(f: Path):
+    def __rmtree(f: Path):
         """Private method that deletes a folder and all its files and subfolders, used in clean_all"""
         if f.is_file():
             f.unlink()
         else:
             for child in f.iterdir():
-                ChapterConfig._rmtree(child)
+                ChapterConfig.__rmtree(child)
             f.rmdir()
 
     @staticmethod
@@ -251,7 +251,7 @@ class ChapterConfig:
                 pass
 
         try:
-            ChapterConfig._rmtree(path)
+            ChapterConfig.__rmtree(path)
             print(f"Deleted '{path}' and all containing files and folder.")
         except FileNotFoundError:
             raise FileNotFoundError(
