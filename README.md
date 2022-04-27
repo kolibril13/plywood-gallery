@@ -135,7 +135,9 @@ This JSON file is read by JavaScript and the elements are placed on an HTML page
 Formatting with black can be done this way:
 `black --python-cell-magics capture_png  docs/gallery.ipynb`
 
-
+# Updating
+Get the latest version of the plywood gallery with   
+`pip install plywood_gallery`
 # Attribution
 
 Thanks to @christopher-besch for discussing the project architecture with me.
