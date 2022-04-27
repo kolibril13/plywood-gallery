@@ -81,20 +81,34 @@ class ChapterConfig:
         with open(ChapterConfig.json_path, "r") as jsonFile:
             data = json.load(jsonFile)
 
-        image_list = []
-        chapter_content = data[chapter_name]  # throw except here if not exist
-        for entry in chapter_content:
-            image_list.append(entry["image_path"])
+        if chapter_name in data:
+            chapter_content = data[chapter_name]
+        else:
+            raise KeyError(
+                f"Cleaning the chapter '{chapter_name}' is not possible because it is not defined in the json file. Probably it got deleted already before."
+            )
 
-        for image in image_list:
-            print(image)
+        for entry in chapter_content:
+            image = entry["image_path"]
             whole_path = ChapterConfig.path.parent / image
             try:
                 whole_path.unlink()
-            except:  # TODO: is this needed at all?
-                pass
+            except FileNotFoundError:
+                raise FileNotFoundError(
+                    f"""It was not possible to delete '{whole_path.parts[-1]}' because this file occurs in the json file,
+                        however not on the disk. Probably images in the folder '/{ChapterConfig.json_path.parts[-2]}'
+                        got renamed without renaming the corresponding json entry. In this case, it's recomended
+                        to run the clean_all command once and re-execute the plywood gallery from scratch."""
+                )
+            print(
+                f"Deleted '{whole_path.parts[-1]}' from the folder '/{ChapterConfig.json_path.parts[-2]}' "
+            )
 
         data.pop(chapter_name)
+
+        jp = ChapterConfig.json_path
+        print(f"Removed entry '{chapter_name}' from '{jp.relative_to(jp.parents[1])}'")
+
         with open(ChapterConfig.json_path, "w") as jsonFile:
             json.dump(data, jsonFile, indent=2, sort_keys=False)
 
@@ -102,18 +116,20 @@ class ChapterConfig:
     def clean_all(skip_warning=False):
         """Cleans the whole gallery_assets tree. User will be asked to confirm the cleaning first
         After cleaning, a new json file will be created."""
-        print(
-            f"This path and all its child elements will be removed:{ChapterConfig.path}"
-        )
+
+        path = ChapterConfig.path
+
+        print(f"This path and all its child elements will be removed:{path}")
+
         if not skip_warning:
             if input("are you sure? (y/n)") != "y":
                 raise ValueError("Could not delete folder because no permission")
             else:
                 pass
 
-        path = ChapterConfig.path
         try:
             rmtree(path)
+            print(f"Deleted '/{path}' and all containing files and folder.")
         except FileNotFoundError:
             raise FileNotFoundError(
                 f"The path {path} does not exist and therefore could not be deleted."
