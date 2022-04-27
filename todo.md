@@ -11,8 +11,6 @@ current project folder structure:
 
 ## tasks:
 
-* setup auto release
-* check all flake8 warnings 
 * Add screen recordings
 * Make YAML robust when parameter is not provided
 * Implementing more tests
@@ -20,7 +18,6 @@ current project folder structure:
 * write documentation
 * Hyperlinks for the chapter names
 * Continue writing the readme
-* doublecheck and refactor caputre_png cell magic
 * make the "NOT" operator optional 
 * prof read readme again
 
