@@ -140,7 +140,7 @@ Get the latest version of the plywood gallery with
 `pip install plywood_gallery`
 # Attribution
 
-Thanks to @christopher-besch for discussing the project architecture with me.
-Thanks to @krassowski for the help to caputre the png output images.
-Thanks to @Rickaym for some inspirations about the JSON files and VS Code related things.
-Thanks to @behackl for providing the Github Actions auto-release script. 
+Thanks to @christopher-besch for discussing the project architecture with me.  
+Thanks to @krassowski for the help to caputre the png output images.  
+Thanks to @Rickaym for some inspirations about the JSON files and VS Code related things.  
+Thanks to @behackl for providing the Github Actions auto-release script.   
