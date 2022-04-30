@@ -121,9 +121,9 @@ Furthermore, one does not have to make a sphinx build to see how the example loo
 
 * When you want one line of your Jupyter cell to be executed, but not to be added to the gallery, simply add the comment `#NOT` at the end of this code line.
 
-# VS Code Plugin
+# VS Code Extension
 Coming soon:
-Display your plywood galleries in the VS Code side panel with the VS Code extension. As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a VS Code opened python script or VS Code Jupyter notebook cell.
+Display your plywood galleries in the VS Code side panel with the extension [Plywood-Gallery-For-VSCode](https://github.com/kolibril13/plywood-gallery/). As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a VS Code opened python script or VS Code Jupyter notebook cell.
 *Add Screen recording Here*
 
 
