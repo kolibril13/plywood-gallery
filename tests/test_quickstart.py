@@ -12,7 +12,7 @@ def test_ChapterConfig_counter():
     quickstart(temp_quickstart_data_dir)
 
     # remove files
-    Path(temp_quickstart_data_dir / "html_configuration.yaml").unlink()
+    Path(temp_quickstart_data_dir / "gallery_config.yaml").unlink()
     Path(temp_quickstart_data_dir / "html_build.ipynb").unlink()
     Path(temp_quickstart_data_dir / "gallery.ipynb").unlink()
     Path(temp_quickstart_data_dir / "gallery_assets/gallery_parameters.json").unlink()

@@ -4,7 +4,7 @@ from pathlib import Path
 def quickstart(destination_folder=None):
 
     source_path = Path(__file__).resolve().parent / "quickstart_template"
-    src0 = source_path / "template_html_configuration.yaml"
+    src0 = source_path / "template_gallery_config.yaml"
     src1 = source_path / "template_html_build.ipynb"
     src2 = source_path / "template_gallery_notebook.ipynb"
     src3 = source_path / "gallery_assets/gallery_parameters.json"
@@ -17,7 +17,7 @@ def quickstart(destination_folder=None):
     else:
         dest_path = destination_folder  # TODO: typecheck here!
 
-    dest0 = dest_path / "html_configuration.yaml"
+    dest0 = dest_path / "gallery_config.yaml"
     dest1 = dest_path / "html_build.ipynb"
     dest2 = dest_path / "gallery.ipynb"
     dest3 = dest_path / "gallery_assets/gallery_parameters.json"
