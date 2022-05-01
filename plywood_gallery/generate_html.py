@@ -14,7 +14,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
     template = load_jinja2_template()
 
     if yaml_file is None:
-        yaml_file = Path.cwd() / "html_configuration.yaml"
+        yaml_file = Path.cwd() / "gallery_config.yaml"
 
     if index_html_file is None:
         index_html_file = Path.cwd() / "index.html"
