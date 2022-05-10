@@ -23,7 +23,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
 
     with open(yaml_file, "r") as file:
         html_configuration_parameter = load(file, SafeLoader)
-        print(f"Sucessfuly read {yaml_file}")
+        print(f"Successfully read {yaml_file}")
 
     project_name = html_configuration_parameter["project_name"]
     repository_url = html_configuration_parameter["repository_url"]
@@ -50,7 +50,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
                 gallery_parameters_path=gallery_parameters_path,
             )
         )
-        print(f"Sucessfuly created {index_html_file}")
+        print(f"Successfully created {index_html_file}")
         print(
             "Now you can start crafting your examples with the file gallery.ipynb and see the results in `index.html`!🚪 "
         )
