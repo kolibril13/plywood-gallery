@@ -33,7 +33,7 @@ current project folder structure:
 * Animated code transitions
 * experimental_iterator_capture_png
 * Parameterslider for certain variables might be possible?
-* Plywood Notebooks with thre colors and hierarchical execution (tree-based execution, maybe with caching?)
+* Plywood Notebooks with three colors and hierarchical execution (tree-based execution, maybe with caching?)
 * Re-Execute PlywoodGallery with own variables in jupyter notebook to enable predictable coding, similar to https://github.com/lux-org/lux
 
 ## pipe dreams

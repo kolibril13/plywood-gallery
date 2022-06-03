@@ -1,6 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
 import pkg_resources
+from yaml import load, SafeLoader
 
 
 def load_jinja2_template():
@@ -10,7 +11,19 @@ def load_jinja2_template():
     return template
 
 
-def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
+def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, batch_processing=False):
+
+    if batch_processing is True:
+        print("WARNING: This feature is work in progress")
+        with open(yaml_file, "r") as file:
+            html__batch_configuration_parameter = load(file, SafeLoader)
+            print(f"Successfully read batch file {yaml_file}")
+            all_yaml_files = html__batch_configuration_parameter["gallery_configs"]
+            print(all_yaml_files)
+            for yaml_entry in all_yaml_files:
+                generate_html_from_jinja2_and_yaml(yaml_file=yaml_entry, index_html_file=f"web_{yaml_entry[:-5]}.html", batch_processing=False)
+            return 0
+
     template = load_jinja2_template()
 
     if yaml_file is None:
@@ -19,8 +32,6 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
     if index_html_file is None:
         index_html_file = Path.cwd() / "index.html"
 
-    from yaml import load, SafeLoader
-
     with open(yaml_file, "r") as file:
         html_configuration_parameter = load(file, SafeLoader)
         print(f"Successfully read {yaml_file}")
@@ -28,10 +39,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None):
     project_name = html_configuration_parameter["project_name"]
     repository_url = html_configuration_parameter["repository_url"]
     user_content_version = html_configuration_parameter["user_content_version"]
-
-    # TODO this works, but does not seem to be the best solution
     core_version = pkg_resources.get_distribution("plywood_gallery").version
-
     description = html_configuration_parameter["description"]
     favicon = html_configuration_parameter["favicon"]
     custom_footer = html_configuration_parameter["custom_footer"]
