@@ -107,9 +107,8 @@ The purpose of this cell is to show slight changes of function calls or post-pro
 
 
 **Side Note: Why is this useful?**   
-Current sphinx documentation of SciPy, Matplotlib, scikit-image, etc. have really nice examples, but they might be complex and convoluted (E.g. [this Matplotlib example](https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py)   with 91 lines of code).
-This new gallery approach has the potential to declutter graphical examples drastically, by splitting them into small chunks that are easy to grasp. The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in-depth, there is still the Header cell.
-Of course, writing a plywood-style gallery adds an extra layer of complexity, but the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they were looking for.
+Current sphinx documentation of SciPy, Matplotlib, scikit-image, etc. have really nice examples, but they might be complex and convoluted (E.g. [this Matplotlib ImageGrid example](https://matplotlib.org/3.5.1/gallery/axes_grid1/demo_axes_grid.html) with 117 lines of code).
+This new gallery approach has the potential to declutter graphical examples drastically, by splitting them into small chunks that are easy to grasp (Same Matplotlib ImageGrid as  [plywood example here](https://kolibril13.github.io/further_ideas_plywood_gallery/web1_ImageGrid.html)). The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in-depth, there is still the Header cell. Of course, writing a plywood-style gallery adds an extra layer of complexity, but the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they were looking for.
 Furthermore, one does not have to make a sphinx build to see how the example looks in the gallery, it gets added in real-time.
 
 
