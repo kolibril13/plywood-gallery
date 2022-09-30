@@ -3,6 +3,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width">
+    <title>{{ project_name }}</title>
+
+    <link rel="icon" type="image/x-icon" href="{{favicon}}">
+    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script src="https://kit.fontawesome.com/fd8b485006.js" crossorigin="anonymous"></script>
@@ -41,7 +45,8 @@
         .container_code {
             position: relative;
             width: 600px;
-            height: 1px;  /* there is probably a better way to do this  */
+            height: 1px;
+            /* there is probably a better way to do this  */
             border: 0;
             z-index: 2;
             font-size: 10px;
@@ -80,13 +85,16 @@
             opacity: 0.6;
         }
 
+        /* .gallery_container{
+        } */
 
         .gallery_entry {
             opacity: 1;
             display: inline-block;
             width: 80px;
             height: auto;
-            margin: 1px;
+            margin: 3px;
+            vertical-align: middle;
             transition: .1s ease;
             backface-visibility: hidden;
             border-radius: 8px;
@@ -257,10 +265,6 @@
             }
         }
     </style>
-    <title>{{ project_name }}</title>
-    <link rel="icon" type="image/x-icon" href="{{favicon}}">
-    <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
-
 </head>
 
 <body style="background-color:#ece6e2;">
@@ -285,31 +289,7 @@
             <br><br><br><br><br><br><br><br>
             <!-- TODO This can be done better with a fixed length -->
         </div>
-        <script>
-
-            let request1 = new XMLHttpRequest();
-            request1.open("GET", "{{gallery_parameters_path}}", false);
-            request1.send(null);
-
-            let jsonData1 = JSON.parse(request1.responseText);
-
-            for (let key of Object.keys(jsonData1)) {
-                let chapter_of_html = key
-                document.writeln(`<h2> <br> ${chapter_of_html}</h1>`)
-
-                let chapter_content = jsonData1[key]
-                for (const chap_element of chapter_content) {
-                    let path_of_example = chap_element["image_path"]
-                    let codeblock_of_example = chap_element["code"]
-                    let css_of_example = chap_element["css"]
-                    document.write(`<img src='${path_of_example}' data-code= '${codeblock_of_example}' onclick='display_code_from_gallery_cell(this);' class='gallery_entry' style= '${css_of_example}'>  `);
-                }
-            }
-        </script>
-
-
-
-
+        <div id="gallery_container"></div>
         <div class="container_info">
             <table>
                 <tr>
@@ -373,6 +353,37 @@
             </table>
         </div>
     </div>
+
 </body>
+<script>
+
+    let request = new XMLHttpRequest();
+    request.open("GET", "{{gallery_parameters_path}}", false);
+    request.send(null);
+    let jsonData = JSON.parse(request.responseText);
+
+    const gallery_area = document.getElementById("gallery_container");
+
+    for (let key of Object.keys(jsonData)) {
+        let chapter_of_html = key
+        gallery_area.insertAdjacentHTML("beforeend", `<br> <h2> ${chapter_of_html} </h2>`);
+
+
+        let chapter_content = jsonData[key]
+        for (const chap_element of chapter_content) {
+            let path_of_example = chap_element["image_path"]
+            let codeblock_of_example = chap_element["code"]
+            let css_of_example = chap_element["css"]
+            gallery_area.insertAdjacentHTML("beforeend",
+                `<img 
+                src ='${path_of_example}'
+                data-code = '${codeblock_of_example}' 
+                style = '${css_of_example}'
+                onclick = 'display_code_from_gallery_cell(this);' 
+                class = 'gallery_entry' 
+                >`);
+        }
+    }
+</script>
 
 </html>
