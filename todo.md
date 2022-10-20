@@ -83,6 +83,12 @@ print(dict2)
 * Plywood Notebooks with three colors and hierarchical execution (tree-based execution, maybe with caching?)
 * Re-Execute PlywoodGallery with own variables in jupyter notebook to enable predictable coding, similar to https://github.com/lux-org/lux
 * Renderer to pdf cheatsheet
+* PyScript implementation for live execution of code snippets, similar to https://pandas.dylancastillo.co/
+* Idea: WebP for plywood images
+
+
+
+
 
 ## pipe dreams
 
