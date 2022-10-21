@@ -42,7 +42,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, bat
     core_version = pkg_resources.get_distribution("plywood_gallery").version
     description = html_configuration_parameter["description"]
     favicon = html_configuration_parameter["favicon"]
-    custom_footer = html_configuration_parameter["custom_footer"]
+    preview_image = html_configuration_parameter["preview_image"]
     gallery_parameters_path = html_configuration_parameter["gallery_parameters_path"]
 
     with open(index_html_file, "w") as fh:
@@ -54,7 +54,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, bat
                 core_version=core_version,
                 description=description,
                 favicon=favicon,
-                custom_footer=custom_footer,
+                preview_image=preview_image,
                 gallery_parameters_path=gallery_parameters_path,
             )
         )
