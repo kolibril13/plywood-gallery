@@ -5,13 +5,9 @@ current project folder structure:
 * docs: example of a minimal  plywood gallery, can be seen on github pages
 * plywood_gallery: stuff, that will be delivered by pip install (infrastructure+templates)
 
-# Version number changes
-
-+ in Project.toml
 
 ## tasks:
 
-* find new fonts for html
 * optimize CSS template in "Minimal Gallery"
 * Add screen recordings
 * better batch infrastructure

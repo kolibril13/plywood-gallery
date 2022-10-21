@@ -3,7 +3,31 @@
 
 <head>
     <meta name="viewport" content="width=device-width">
+
+    <!-- HTML Meta Tags -->
     <title>{{ project_name }}</title>
+    <meta name="description" content="{{ description }}">
+    
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:url" content="{{repository_url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ project_name }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ thumbnail_url }}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="kolibril13.github.io">
+    <meta property="twitter:url" content="{{repository_url}}">
+    <meta name="twitter:title" content="{{ project_name }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ thumbnail_url }}">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+        
+
+
 
     <link rel="icon" type="image/x-icon" href="{{favicon}}">
     <!-- the original plywood icon is dedicated to the Marble Machine X by Wintergatan https://youtu.be/JgM2ruB8M34?t=614 -->
