@@ -1,24 +1,24 @@
 {
-  "X1": [
+  "Chapter 1": [
     {
-      "image_path": "gallery_assets/X1_001_Foo.png",
+      "image_path": "gallery_assets/Chapter_1_001_Foo.png",
       "celltype": "Header",
       "css": "border: 3px solid #ED6A5A;width:240px",
-      "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20])"
+      "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c = \"orange\")"
     }
   ],
-  "X2": [
+  "Chapter 2": [
     {
-      "image_path": "gallery_assets/X2_002_Bar.png",
-      "celltype": "Header",
-      "css": "border: 3px solid #ED6A5A;width:240px",
-      "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c= \"r\")"
+      "image_path": "gallery_assets/Chapter_2_002_Bar.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width:240px",
+      "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c= \"b\")"
     },
     {
-      "image_path": "gallery_assets/X2_003_HelloWorld.png",
-      "celltype": "Header",
-      "css": "border: 3px solid #ED6A5A;width:240px",
-      "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,-20], c= \"r\")"
+      "image_path": "gallery_assets/Chapter_2_003_HelloWorld.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width:240px",
+      "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,-20], c= \"b\")"
     }
   ]
 }

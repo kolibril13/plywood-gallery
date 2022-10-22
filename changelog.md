@@ -2,6 +2,7 @@
 
 
 ## 0.0.8
+* Add icon and preview_image to template.
 * Remove upper limits from dependencies.
 ## 0.0.7
 * add `preview_image` in `gallery_config.yaml`

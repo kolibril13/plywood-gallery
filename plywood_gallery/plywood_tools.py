@@ -145,7 +145,7 @@ class ChapterConfig:
         """Makes a new chapter"""
         ChapterConfig.chapter_name = new_chapter
 
-    def set_assets_folder_name(new_assets_folder_name):
+    def set_assets_folder_name(new_assets_folder_name):  # TODO Some more exploration of this feature is required.
         """Name for the folder where the images and the json file are saved in."""
         path = (
             Path.cwd() / new_assets_folder_name
@@ -267,4 +267,4 @@ class ChapterConfig:
         joson_file_path = ChapterConfig.json_path
         with open(joson_file_path, "w") as jsonFile:
             json.dump({}, jsonFile, indent=2)
-        print(f"Sucessfully created {ChapterConfig.json_path}!🦫")
+        print(f"Successfully created {ChapterConfig.json_path}!🦫")
