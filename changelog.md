@@ -1,5 +1,8 @@
 # Changelog
 
+
+## 0.0.8
+* Remove upper limits from dependencies.
 ## 0.0.7
 * add `preview_image` in `gallery_config.yaml`
 * Remove `custom_footer` in `gallery_config.yaml`

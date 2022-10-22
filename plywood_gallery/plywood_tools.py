@@ -23,7 +23,7 @@ class PlywoodGalleryMagic(Magics):
         "--celltype",
         "-c",
         default="Normal",
-        help=("Cell can be of type 'Normal', 'Header', and 'Dependend'"),
+        help=("Cell can be of type 'Normal', 'Header', and 'Dependent'"),
     )
     @magic_arguments.argument(
         "--style",

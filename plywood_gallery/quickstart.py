@@ -35,28 +35,28 @@ def quickstart(destination_folder=None):
     dest_subfolder.mkdir(parents=False, exist_ok=True)
 
     dest0.write_bytes(src0.read_bytes())
-    print(f"Sucessfuly created {dest0}")
+    print(f"Successfully created {dest0}")
 
     dest1.write_bytes(src1.read_bytes())
-    print(f"Sucessfuly created {dest1}")
+    print(f"Successfully created {dest1}")
 
     dest2.write_bytes(src2.read_bytes())
-    print(f"Sucessfuly created {dest2}")
+    print(f"Successfully created {dest2}")
 
     dest3.write_bytes(src3.read_bytes())
-    print(f"Sucessfuly created {dest3}")
+    print(f"Successfully created {dest3}")
 
     dest4.write_bytes(src4.read_bytes())
-    print(f"Sucessfuly created {dest4}")
+    print(f"Successfully created {dest4}")
 
     dest5.write_bytes(src5.read_bytes())
-    print(f"Sucessfuly created {dest5}")
+    print(f"Successfully created {dest5}")
 
     dest6.write_bytes(src6.read_bytes())
-    print(f"Sucessfuly created {dest6}")
+    print(f"Successfully created {dest6}")
 
     print(
-        "Congratiulations, the trees were cut down and the plywood gallery project files are now in place. 🌲🪚"
+        "Congratulations, the trees were cut down and the plywood gallery project files are now in place. 🌲🪚"
     )
     print(
         "Next step: Setup the `index.html` page with the notebook `html_build.ipynb`"
