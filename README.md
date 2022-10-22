@@ -13,19 +13,19 @@ https://kolibril13.github.io/plywood-gallery-minimal-example/
     pip install plywood-gallery
     ```
 
-* Open a python script or python console and type:
+* Open a python console and type:
     ```py
-    from plywood_gallery import quickstart
-    quickstart()
+    >>> from plywood_gallery import quickstart, generate_html
+    >>> quickstart()
+    >>> # now, set project details in gallery_config.yaml e.g. project name, description, etc. 
+    >>> generate_html(yaml_file="gallery_config.yaml", html_file="index.html")
     ```
-    This will init the project structure files.  
-* Set up your project details in `gallery_config.yaml` e.g. project name, description, etc.  
-* Run the function `generate_html` in the notebook  `html_build.ipynb`.  
 All needed files are now generated.  
-* Open `index.html`.  Just loading index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import open_webpage; open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
+* Open `index.html`.  This can be done eighter by `from plywood_gallery import open_webpage; open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
 * Add your code to `gallery.ipynb`.   
 
 * Start crafting!
+* Note: Everytime you change settings in `gallery_config.yaml` the function `generate_html` has to be called. This can be done with the also created helper notebook called `build_html`.
 
 # Intended workflow
 
