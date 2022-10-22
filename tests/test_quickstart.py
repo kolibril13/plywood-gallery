@@ -15,10 +15,13 @@ def test_ChapterConfig_counter():
     Path(temp_quickstart_data_dir / "gallery_config.yaml").unlink()
     Path(temp_quickstart_data_dir / "html_build.ipynb").unlink()
     Path(temp_quickstart_data_dir / "gallery.ipynb").unlink()
+    Path(temp_quickstart_data_dir / "icon.png").unlink()
+    Path(temp_quickstart_data_dir / "preview_image.png").unlink()
+
     Path(temp_quickstart_data_dir / "gallery_assets/gallery_parameters.json").unlink()
-    Path(temp_quickstart_data_dir / "gallery_assets/X1_001_Foo.png").unlink()
-    Path(temp_quickstart_data_dir / "gallery_assets/X2_002_Bar.png").unlink()
-    Path(temp_quickstart_data_dir / "gallery_assets/X2_003_HelloWorld.png").unlink()
+    Path(temp_quickstart_data_dir / "gallery_assets/Chapter_1_001_Foo.png").unlink()
+    Path(temp_quickstart_data_dir / "gallery_assets/Chapter_2_002_Bar.png").unlink()
+    Path(temp_quickstart_data_dir / "gallery_assets/Chapter_2_003_HelloWorld.png").unlink()
 
     # remove dirs
     Path(temp_quickstart_data_dir / "gallery_assets").rmdir()
