@@ -118,8 +118,8 @@ The purpose of this cell is to show slight changes of function calls or post-pro
 * When you want one line of your Jupyter cell to be executed, but not to be added to the gallery, simply add the comment `#NOT` at the end of this code line.
 
 # VS Code Extension
-Coming soon:
-Display your plywood galleries in the VS Code side panel with the extension [Plywood-Gallery-For-VSCode](https://github.com/kolibril13/plywood-gallery/). As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a VS Code opened python script or VS Code Jupyter notebook cell.
+With the [Plywood-Gallery-For-VSCode](https://github.com/Rickaym/plywood-gallery-for-vscode/) Extension,  plywood galleries can be displaied in the VS Code side panel.  
+ As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a python scripts or Jupyter notebook cell.  
 *Add Screen recording Here*
 
 
