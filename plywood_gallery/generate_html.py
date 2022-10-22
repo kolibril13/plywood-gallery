@@ -11,7 +11,7 @@ def load_jinja2_template():
     return template
 
 
-def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, batch_processing=False):
+def generate_html(yaml_file=None, html_file=None, batch_processing=False):
 
     if batch_processing is True:
         print("WARNING: This feature is work in progress")
@@ -21,7 +21,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, bat
             all_yaml_files = html__batch_configuration_parameter["gallery_configs"]
             print(all_yaml_files)
             for yaml_entry in all_yaml_files:
-                generate_html_from_jinja2_and_yaml(yaml_file=yaml_entry, index_html_file=f"web_{yaml_entry[:-5]}.html", batch_processing=False)
+                generate_html(yaml_file=yaml_entry, html_file=f"web_{yaml_entry[:-5]}.html", batch_processing=False)
             return 0
 
     template = load_jinja2_template()
@@ -29,8 +29,8 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, bat
     if yaml_file is None:
         yaml_file = Path.cwd() / "gallery_config.yaml"
 
-    if index_html_file is None:
-        index_html_file = Path.cwd() / "index.html"
+    if html_file is None:
+        html_file = Path.cwd() / "index.html"
 
     with open(yaml_file, "r") as file:
         html_configuration_parameter = load(file, SafeLoader)
@@ -45,7 +45,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, bat
     preview_image = html_configuration_parameter["preview_image"]
     gallery_parameters_path = html_configuration_parameter["gallery_parameters_path"]
 
-    with open(index_html_file, "w") as fh:
+    with open(html_file, "w") as fh:
         fh.write(
             template.render(
                 project_name=project_name,
@@ -58,7 +58,7 @@ def generate_html_from_jinja2_and_yaml(yaml_file=None, index_html_file=None, bat
                 gallery_parameters_path=gallery_parameters_path,
             )
         )
-        print(f"Successfully created {index_html_file}")
+        print(f"Successfully created {html_file}")
         print(
             "Now you can start crafting your examples with the file gallery.ipynb and see the results in `index.html`!🚪 "
         )
