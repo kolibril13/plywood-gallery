@@ -2,6 +2,8 @@
 
 
 ## 0.0.8
+
+* Tweak template
 * Rename parameter `index_html_file` to `html_file`
 * Rename `generate_html_from_jinja2_and_yaml` to `generate_html`
 * Add icon and preview_image to template.
