@@ -1,6 +1,6 @@
-# Plywood Gallery 🪵
+# Plywood Gallery
 
-This repo will turn your Jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent". 
+This repo will turn your Jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent".   
 You can find an minimal example gallery here:   
 https://kolibril13.github.io/plywood-gallery-minimal-example/   
 *Add Screen recording Here*  
@@ -21,11 +21,14 @@ https://kolibril13.github.io/plywood-gallery-minimal-example/
     >>> generate_html(yaml_file="gallery_config.yaml", html_file="index.html")
     ```
 All needed files are now generated.  
-* Open `index.html`.  This can be done eighter by `from plywood_gallery import open_webpage; open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
+* Open `index.html`.  
+This can be done with `from plywood_gallery import open_webpage; open_webpage()`  
+ or alternatively in VS Code by clicking 'Live Preview: Show Preview'.  
 * Add your code to `gallery.ipynb`.   
 
 * Start crafting!
-* Note: Everytime you change settings in `gallery_config.yaml` the function `generate_html` has to be called. This can be done with the also created helper notebook called `build_html`.
+* Note: Everytime you change settings in `gallery_config.yaml` the function `generate_html` has to be called.  
+ This can be done with the helper notebook  `build_html.ipynb` that is created by the quickstart.
 
 # Intended workflow
 
@@ -36,12 +39,11 @@ There will be two phases of building the gallery, the *preparation phase* and th
 
 During the preparation phase, you can tinker around your cells and debug them and run them again and again.
 
-Every single cell run will create a new entry in the plywood gallery, so running cell A and cell B  in the order AABABB will also display the cells in the order AABABB and no previous cells will be overwritten. 
-This behavior can also be used to have a visual version control system of your notebook execution history. 
-This is nothing else than a visual notebook execution history, and therefore can be used as a version control system about how your plots and graphics evolve over the preparation process.  
-There is no "replace plywood gallery entry" yet, but might be implemented in the future, which would render AABABB to AB.
+Every single cell run will create a new entry in the plywood gallery, so running cell A and cell B  in the order AABA will also display the cells in the order AABA and no previous cells will be overwritten.  
+This behavior can be used as a visual version control system to see how your plots evolve over the preparation process.  
+*There is no "replace plywood gallery entry" yet, but might be implemented in the future, which would render AABA to AB.*
 
-## 2. Deployment phase
+## 2. Publish phase
 
 When you want to publish your gallery notebook e.g. on GitHub pages, then first clean all cells from the preparation phase with the ChapterConfig  
 ```py
@@ -60,16 +62,16 @@ In the deployment phase, it is very important that cells are executed from top t
 
 **Chapters**  
 
-All gallery entries need to be in chapters, chapter names are defined like this:
+All gallery entries must be placed in chapters, chapter names are defined as follows:
 ```py
 from plywood_gallery import ChapterConfig
 ChapterConfig.set_chapter_name("Array 2D")
 ```
-As soon as there is a new name assigned, this new chapter will be added in the gallery below.
+As soon as a new name is given, this new chapter will be added to the gallery below.
 Chapters can be sorted by 
 ```py
 from plywood_gallery import ChapterConfig
-ChapterConfig.sort(["2D Array", "3D Arrays"]) # Not yet Implemented
+ChapterConfig.sort(["2D Array", "3D Arrays"])
 ```
 
 **Cellmagic**  
@@ -92,10 +94,10 @@ plt.plot([1,2],[10,20])
 This will generate the file `gallery_assets/2D_Arrays_001_MyExample.png`. Note that plywood makes sure that file names are unique and can be easily sorted in the file explorer.
 Running this cell again would generate `gallery_assets/2D_Arrays_002_MyExample.png`.   
 **--style**:  
-Change the gallery entries size, border width or whatever is possible in CSS!  
+Change the gallery entry's size, border width or other CSS parameters.  
 **--celltype**:    
-This is a very powerful feature that has to be used carefully.  
-Here is their purpose:  
+This is a powerful feature that has to be used carefully.  
+Here is its purpose:  
 
 * **Header:**  
 Define imports and make definitions of functions
@@ -103,14 +105,8 @@ Define imports and make definitions of functions
 * **Normal:**  
 Show usage of imports and functions that you've made in the header cell. WARNING: All normal cells should ALWAYS be independent of each other. Try to not change variables in these cells, and if you have to, make sure to not use them in other normal cells again. If you need to use them again, make sure to rest their value before adding another "Normal cell". This is crucial because a user should always be able to run the cell in the combination "Header+Normal"
 * **Dependent**:  
-The purpose of this cell is to show slight changes of function calls or post-processing of what happened in a "Normal cell". It should only have very few lines of code and only change as few parameters as possible. That makes it possible, to see the slight visual adjustments in plots, and then easily associate the code changes with the visual changes. "Dependent" Cells can be run in the combination "Header+Normal+Dependent", but also "Header+Normal+Dependent+Dependent".
-
-
-
-**Side Note: Why is this useful?**   
-Current sphinx documentation of SciPy, Matplotlib, scikit-image, etc. have really nice examples, but they might be complex and convoluted (E.g. [this Matplotlib ImageGrid example](https://matplotlib.org/3.5.1/gallery/axes_grid1/demo_axes_grid.html) with 117 lines of code).
-This new gallery approach has the potential to declutter graphical examples drastically, by splitting them into small chunks that are easy to grasp (Same Matplotlib ImageGrid as  [plywood example here](https://kolibril13.github.io/further_ideas_plywood_gallery/web1_ImageGrid.html)). The user will only see the lines s/he needs and does not have to bother about the rest. And in case that the user wants to go more in-depth, there is still the Header cell. Of course, writing a plywood-style gallery adds an extra layer of complexity, but the benefit can be tremendous: Users don't have to fight their way to a code jungle anymore, but they get nicely served what they were looking for.
-Furthermore, one does not have to make a sphinx build to see how the example looks in the gallery, it gets added in real-time.
+The purpose of this cell is to show slight changes of function calls or post-processing of what happened in a "Normal cell". It should only have few lines of code and only change as few parameters as possible. This makes it possible to see slight visual adjustments in the plots and easily associate the code changes to the visual changes.  
+ "Dependent" Cells can be run in the combination "Header+Normal+Dependent", as well as "Header+Normal+Dependent+Dependent".
 
 
 # Tips and Tricks
@@ -137,7 +133,7 @@ Formatting with black can be done this way:
 
 # Updating
 Get the latest version of the plywood gallery with   
-`pip install plywood_gallery`
+`pip install plywood_gallery --update`
 # Attribution
 
 Thanks to @christopher-besch for discussing the project architecture with me.  
