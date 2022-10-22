@@ -1,7 +1,8 @@
-# Plywood Gallery 🌲🪚 -- 🪵🪓 --🚪
+# Plywood Gallery 🪵
 
 This repo will turn your Jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent". 
-You can find an minimal example gallery here: https://kolibril13.github.io/plywood-gallery-minimal-example/ 
+You can find an minimal example gallery here:   
+https://kolibril13.github.io/plywood-gallery-minimal-example/   
 *Add Screen recording Here*  
 **NOTE: Still work in progress, there might be breaking changes**
 
@@ -24,7 +25,7 @@ All needed files are now generated.
 * Open `index.html`.  Just loading index.html in the browser won't load the interactive parts, so better use `from plywood_gallery import open_webpage; open_webpage()` or in VS Code select 'Live Preview: Show Preview' in VS Code to start the page with a server.  
 * Add your code to `gallery.ipynb`.   
 
-* Start crafting! ✔️
+* Start crafting!
 
 # Intended workflow
 
@@ -142,4 +143,4 @@ Get the latest version of the plywood gallery with
 Thanks to @christopher-besch for discussing the project architecture with me.  
 Thanks to @krassowski for the help to caputre the png output images.  
 Thanks to @Rickaym for some inspirations about the JSON files and VS Code related things.  
-Thanks to @behackl for providing the Github Actions auto-release script.   
+Thanks to @behackl for providing the Github Actions auto-release script.
