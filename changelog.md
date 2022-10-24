@@ -2,7 +2,7 @@
 
 ## 0.0.9
 
-* add `plywood_metadata` identifier in json.
+* add `plywood_metadata` identifier in json, and adjust sort, clean and quickstart accordingly.
 
 ## 0.0.8
 

@@ -174,7 +174,9 @@ class ChapterConfig:
         new_order = chapter_order
         joson_file_path = ChapterConfig.json_path
         with open(joson_file_path, "r") as jsonFile:
-            data = json.load(jsonFile)
+            all_content = json.load(jsonFile)
+
+        data = all_content["plywood_content"]
 
         temp_data = []
 
@@ -187,15 +189,18 @@ class ChapterConfig:
             new_data[chapter_name] = temp
 
         new_data.update(data)
-
+        
+        all_content["plywood_content"] = new_data
         with open(joson_file_path, "w") as jsonFile:
-            json.dump(new_data, jsonFile, indent=2, sort_keys=False)
+            json.dump(all_content, jsonFile, indent=2, sort_keys=False)
 
     @staticmethod
     def clean(chapter_name):
         """clean only one specific chapter"""
         with open(ChapterConfig.json_path, "r") as jsonFile:
-            data = json.load(jsonFile)
+            all_content = json.load(jsonFile)
+
+        data = all_content["plywood_content"]
 
         if chapter_name in data:
             chapter_content = data[chapter_name]
@@ -225,8 +230,9 @@ class ChapterConfig:
         jp = ChapterConfig.json_path
         print(f"Removed entry '{chapter_name}' from '{jp.relative_to(jp.parents[1])}'")
 
+        all_content["plywood_content"] = data
         with open(ChapterConfig.json_path, "w") as jsonFile:
-            json.dump(data, jsonFile, indent=2, sort_keys=False)
+            json.dump(all_content, jsonFile, indent=2, sort_keys=False)
 
     @staticmethod
     def __rmtree(f: Path):
