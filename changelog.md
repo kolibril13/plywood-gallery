@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.9
+
+* add `plywood_metadata` identifier in json.
 
 ## 0.0.8
 

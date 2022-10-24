@@ -384,8 +384,9 @@
     let request = new XMLHttpRequest();
     request.open("GET", "{{gallery_parameters_path}}", false);
     request.send(null);
-    let jsonData = JSON.parse(request.responseText);
-
+    let json_content_all = JSON.parse(request.responseText);
+    jsonData = json_content_all["plywood_content"]
+    
     const gallery_area = document.getElementById("gallery_container");
 
     for (let key of Object.keys(jsonData)) {
