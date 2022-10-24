@@ -133,7 +133,7 @@ Formatting with black can be done this way:
 
 # Updating
 Get the latest version of the plywood gallery with   
-`pip install plywood_gallery --update`
+`pip install plywood_gallery --upgrade`
 # Attribution
 
 Thanks to @christopher-besch for discussing the project architecture with me.  

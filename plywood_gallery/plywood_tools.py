@@ -95,8 +95,9 @@ class PlywoodGalleryMagic(Magics):
 
         # read + update + write json
         with open(joson_file_path, "r") as jsonFile:
-            data = json.load(jsonFile)
+            all_content = json.load(jsonFile)
 
+        data = all_content["plywood_content"]
         if chapter_name not in data:
             data[chapter_name] = []
 
@@ -111,8 +112,10 @@ class PlywoodGalleryMagic(Magics):
         )
 
         data[chapter_name] = chapter_content
+
+        all_content["plywood_content"] = data
         with open(joson_file_path, "w") as jsonFile:
-            json.dump(data, jsonFile, indent=2, sort_keys=False)
+            json.dump(all_content, jsonFile, indent=2, sort_keys=False)
 
         # save the output
         with capture_output(stdout=False, stderr=False, display=True) as result:
@@ -265,6 +268,16 @@ class ChapterConfig:
         path.mkdir(parents=False, exist_ok=True)
         # create json file
         joson_file_path = ChapterConfig.json_path
+
+        import pkg_resources
+        core_version = pkg_resources.get_distribution("plywood_gallery").version
+
+        json_default = {
+            "plywood_metadata": {"plywood_gallery_core_version": f"{core_version}"},
+            "plywood_content": {},
+        }
+
         with open(joson_file_path, "w") as jsonFile:
-            json.dump({}, jsonFile, indent=2)
+            json.dump(json_default, jsonFile, indent=2)
+
         print(f"Successfully created {ChapterConfig.json_path}!🦫")
