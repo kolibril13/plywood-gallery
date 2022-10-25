@@ -63,7 +63,7 @@ And all previous cells will be deleted.
 Next, restart the kernel and click "Run All".
 
 **Why is the kernel restart necessary?**  
-In the deployment phase, it is very important that cells are executed from top to button with a freshly started kernel to avoid unwanted artifacts from the preparation phase.
+In the deployment phase, cells must be executed from top to button with a freshly started kernel to avoid unwanted artifacts from the preparation phase.
 
 # User guide
 
@@ -89,7 +89,7 @@ One can run the `%%capture_png` with three arguments:
 --celltype: (optional)
     Cell can be of type 'Normal', 'Header', and 'Dependent'
 --style: (optional)
-    Add extra css style for the gallery enteries
+    Add extra css style for the gallery entries
 ```
 **--path**:  
 A basic cell can look like this:
@@ -101,7 +101,7 @@ plt.plot([1,2],[10,20])
 This will generate the file `gallery_assets/2D_Arrays_001_MyExample.png`. Note that plywood makes sure that file names are unique and can be easily sorted in the file explorer.
 Running this cell again would generate `gallery_assets/2D_Arrays_002_MyExample.png`.   
 **--style**:  
-Change the gallery entry's size, border width or other CSS parameters.  
+Change the gallery entry's size, border width, or other CSS parameters.  
 **--celltype**:    
 This is a powerful feature that has to be used carefully.  
 Here is its purpose:  
@@ -112,7 +112,7 @@ Define imports and make definitions of functions
 * **Normal:**  
 Show usage of imports and functions that you've made in the header cell. WARNING: All normal cells should ALWAYS be independent of each other. Try to not change variables in these cells, and if you have to, make sure to not use them in other normal cells again. If you need to use them again, make sure to rest their value before adding another "Normal cell". This is crucial because a user should always be able to run the cell in the combination "Header+Normal"
 * **Dependent**:  
-The purpose of this cell is to show slight changes of function calls or post-processing of what happened in a "Normal cell". It should only have few lines of code and only change as few parameters as possible. This makes it possible to see slight visual adjustments in the plots and easily associate the code changes to the visual changes.  
+The purpose of this cell is to show slight changes in function calls or post-processing of what happened in a "Normal cell". It should only have a few lines of code and only change as few parameters as possible. This makes it possible to see slight visual adjustments in the plots and easily associate the code changes to the visual changes.  
  "Dependent" Cells can be run in the combination "Header+Normal+Dependent", as well as "Header+Normal+Dependent+Dependent".
 
 
@@ -125,8 +125,8 @@ The purpose of this cell is to show slight changes of function calls or post-pro
 * When you want one line of your Jupyter cell to be executed, but not to be added to the gallery, simply add the comment `#NOT` at the end of this code line.
 
 # VS Code Extension
-With the [Plywood-Gallery-For-VSCode](https://github.com/Rickaym/plywood-gallery-for-vscode/) Extension,  plywood galleries can be displaied in the VS Code side panel.  
- As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a python scripts or Jupyter notebook cell.  
+With the [Plywood-Gallery-For-VSCode](https://github.com/Rickaym/plywood-gallery-for-vscode/) Extension,  plywood galleries can be displayed in the VS Code side panel.  
+ As soon as one gallery entry is clicked, the code is automatically copied to the last current cursor position in a python script or Jupyter notebook cell.  
 *Add Screen recording Here*
 
 
@@ -144,6 +144,6 @@ Get the latest version of the plywood gallery with
 # Attribution
 
 Thanks to @christopher-besch for discussing the project architecture with me.  
-Thanks to @krassowski for the help to caputre the png output images.  
-Thanks to @Rickaym for some inspirations about the JSON files and VS Code related things.  
-Thanks to @behackl for providing the Github Actions auto-release script.
+Thanks to @krassowski for the help to capture the png output images.  
+Thanks to @Rickaym for some inspiration about the JSON files and VSCode related things.  
+Thanks to @behackl for providing the GitHub Actions auto-release script.
