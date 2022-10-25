@@ -1,9 +1,15 @@
 # Plywood Gallery
 
-This repo will turn your Jupyter cell output images into a gallery, that enables you to quickly access your code by clicking on the gallery entries. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent".   
-You can find an minimal example gallery here:   
-https://kolibril13.github.io/plywood-gallery-minimal-example/   
-*Add Screen recording Here*  
+
+Plywood Gallery - a new framework to generate python documentation via notebooks.  
+The special feature: code snippets are represented by images.  
+And it’s possible to show code variations with example branching.  
+
+https://user-images.githubusercontent.com/44469195/197733527-cb7daf87-8770-44dc-8f4c-4879145813cf.mov
+
+
+
+
 **NOTE: Still work in progress, there might be breaking changes**
 
 # Installation
@@ -26,11 +32,12 @@ This can be done with `from plywood_gallery import open_webpage; open_webpage()`
  or alternatively in VS Code by clicking 'Live Preview: Show Preview'.  
 * Add your code to `gallery.ipynb`.   
 
-* Start crafting!
-* Note: Everytime you change settings in `gallery_config.yaml` the function `generate_html` has to be called.  
- This can be done with the helper notebook  `build_html.ipynb` that is created by the quickstart.
+* Start with the gallery creation!
 
-# Intended workflow
+# Gallery creation
+
+First some background infos: The plywood gallery will turn your Jupyter cell output images into a gallery. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent".
+All information is phrased through the cell magic **`%%capture_png`** (more in section *User guide*).  
 
 Add the **`%%capture_png`** magic in Jupyter cells and the output images will automatically and in real-time be added to your gallery.   
 There will be two phases of building the gallery, the *preparation phase* and the *deployment phase.*
