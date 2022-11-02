@@ -1,5 +1,6 @@
 # Plywood Gallery
 
+[![PyPI version](https://badge.fury.io/py/plywood-gallery.svg)](https://badge.fury.io/py/plywood-gallery)
 
 Plywood Gallery - a new framework to generate python documentation via notebooks.  
 The special feature: code snippets are represented by images.  
