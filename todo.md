@@ -1,24 +1,15 @@
+
+# FOR VERSION UPDATES:
+* Version Number in quickstart has to be updated for each release
+
+
 # TODO:
-
-current project folder structure:
-
-* docs: example of a minimal  plywood gallery, can be seen on github pages
-* plywood_gallery: stuff, that will be delivered by pip install (infrastructure+templates)
-
-
-## tasks:
-
-* optimize CSS template in "Minimal Gallery"
-* Add screen recordings
 * better batch infrastructure
 * Make YAML robust when parameter is not provided
 * Implementing more tests
 * Maybe test the cell magic with a default notebook and https://github.com/chrisjsewell/pytest-notebook ?
 * write documentation
-* Hyperlinks for the chapter names
-* Continue writing the readme
 * make the "NOT" operator optional 
-* prof read readme again
 * Always show Code of Header with 50% opacity 
 
 
@@ -27,7 +18,8 @@ current project folder structure:
     * Matplotlib plottypes https://matplotlib.org/devdocs/plot_types/index.html 
     * Clusteralgorithmen https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html in plywood gallery umwandeln
     * More Pathlib examples, e.g. for  :
-
+    * Plywood Gallery Matplotlib Cheat Sheet https://github.com/matplotlib/cheatsheets
+    
 ```python=
 from pathlib import Path
 
@@ -104,3 +96,16 @@ All kinds of images can be used:
 * For graphical output, best use the graphical output
 * For snippets without graphical output, use any placeholder image:
 Emoji combinations, bootstrap icons, a Landscape, your favorite cartoon character, cute  cats, image of your grandparents, any mnemonic aid that gives an association with the code snippet. 
+
+
+# for docs:
+
+* Note: Everytime you change settings in `gallery_config.yaml` the function `generate_html` has to be called.  
+ This can be done with the helper notebook  `build_html.ipynb` that is created by the quickstart.
+
+* docs: example of a minimal  plywood gallery, can be seen on github pages
+* plywood_gallery: stuff, that will be delivered by pip install (infrastructure+templates)
+
+# dev workflow:
+
+* optimize CSS template in "Minimal Gallery"
