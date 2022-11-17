@@ -145,6 +145,8 @@ Get the latest version of the plywood gallery with
 # Attribution
 
 Thanks to @christopher-besch for discussing the project architecture with me.  
+Thanks to [Marlene Knoche
+](https://twitter.com/sanguinikde) for feedback on the design.  
 Thanks to @krassowski for the help to capture the png output images.  
 Thanks to @Rickaym for some inspiration about the JSON files and VSCode related things.  
 Thanks to @behackl for providing the GitHub Actions auto-release script.
