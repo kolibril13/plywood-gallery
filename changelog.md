@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.10
+
+* add search function
 ## 0.0.9
 
 * add `plywood_metadata` identifier in json, and adjust sort, clean and quickstart accordingly.
