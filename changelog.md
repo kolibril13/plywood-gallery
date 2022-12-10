@@ -1,5 +1,9 @@
 # Changelog
 
+
+## 0.0.11
+
+Python 3.11 support
 ## 0.0.10
 
 * add search function
