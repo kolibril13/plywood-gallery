@@ -412,7 +412,7 @@
 
     // rest the code content block to an empty paragraph 
     function resetContent(imgs) {
-        code_snippet.innerText = "" // Reset the text content
+        code_snippet.innerHTML = "<p> <br> </p>" // Reset the text content
 
         hljs.highlightAll();
     }
