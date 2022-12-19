@@ -89,8 +89,6 @@ class PlywoodGalleryMagic(Magics):
         if new_codeblock:  # checks if there are lines that include "#ONLY" OR "# ONLY"
             code_block = new_codeblock
 
-        # make sure that javascript can read the single quote character
-        code_block = code_block.replace("'", "&#39;")
         code_block = code_block.strip("\n")
 
         # read + update + write json
