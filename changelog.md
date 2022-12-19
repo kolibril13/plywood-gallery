@@ -1,6 +1,8 @@
 # Changelog
 
+## 0.0.12
 
+Solved the code escaping problem: https://github.com/kolibril13/plywood-gallery/issues/10
 ## 0.0.11
 
 Python 3.11 support

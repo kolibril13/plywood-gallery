@@ -298,7 +298,7 @@
 <code class="python" id="code_snippet"> <br> </code>
 </pre> <!-- better naming of these divs here-->
             <div class='close_button'>
-                <button type="button" onclick="reset_content(this)">X</button>
+                <button type="button" onclick="resetContent(this)">X</button>
             </div>
         </div>
         <div>
@@ -308,7 +308,7 @@
         <div id="gallery_container">
             <template gallery-item-template>
                 <img class='gallery_entry' src='' data-code='' style='width: auto;'
-                    onclick='display_code_from_gallery_cell(this);'>
+                    onclick='displayCode(this);'>
             </template>
 
             <template heading-template>
@@ -400,27 +400,31 @@
 </body>
 
 <script>
+    const codeSnippet = document.getElementById("code_snippet")
+
     hljs.highlightAll();
-    function display_code_from_gallery_cell(imgs) {
-        var name = imgs.dataset.code;
-        document.getElementById("code_snippet").innerHTML = name
-        hljs.highlightAll();
-    }
-    // rest the code content block to an empty paragraph 
-    function reset_content(imgs) {
-        document.getElementById("code_snippet").innerHTML = "<p> <br></p>" //maybe better solution possible?
+    function displayCode(imgs) {
+        // Escape the HTML
+        codeSnippet.innerHTML = new Option(imgs.dataset.code).innerHTML
+        
         hljs.highlightAll();
     }
 
-    let request = new XMLHttpRequest();
+    // rest the code content block to an empty paragraph 
+    function resetContent(imgs) {
+        code_snippet.innerHTML = "<p> <br> </p>" // Reset the text content
+
+        hljs.highlightAll();
+    }
+
+    const request = new XMLHttpRequest();
     request.open("GET", "{{gallery_parameters_path}}", false);
     request.send(null);
-    let json_content_all = JSON.parse(request.responseText);
-    jsonData = json_content_all["plywood_content"]
+    const jsonData = JSON.parse(request.responseText)["plywood_content"];
 
     const gallery_area = document.getElementById("gallery_container");
 
-    plywood_entries = []
+    const plywoodEntries = []
     for (let key of Object.keys(jsonData)) {
         let chapter_of_html = key
         var template_heading = document.querySelector("[heading-template]");
@@ -442,7 +446,7 @@
             my_img.src = path_of_example;
             my_img.dataset.code = codeblock_of_example;
             gallery_area.appendChild(my_img);
-            plywood_entries.push({ codesnip: codeblock_of_example, img: my_img })
+            plywoodEntries.push({ codesnip: codeblock_of_example, img: my_img })
 
         }
     }
@@ -452,7 +456,7 @@
     searchInput.addEventListener("input", e => {
         const value = e.target.value.toLowerCase()
 
-        plywood_entries.forEach(pw_entry => {
+        plywoodEntries.forEach(pw_entry => {
             const isVisible = pw_entry.codesnip.toLowerCase().includes(value)
             console.log(isVisible)
             if (!isVisible) {
