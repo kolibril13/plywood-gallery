@@ -35,6 +35,21 @@ This can be done with `from plywood_gallery import open_webpage; open_webpage()`
 
 * Start with the gallery creation!
 
+# Examples
+
+* https://github.com/kolibril13/plywood-gallery-functions
+* https://github.com/kolibril13/plywood-gallery-napari
+* https://github.com/kolibril13/mobject-gallery
+* https://github.com/kolibril13/plywood-gallery-pathlib
+* https://github.com/kolibril13/plywood-gallery-f-string
+* https://github.com/kolibril13/plywood-gallery-matplotlib-ImageGrid
+* https://github.com/kolibril13/plywood-gallery-seaborn
+* https://github.com/kolibril13/plywood-gallery-matplotlib-hatch
+* https://github.com/kolibril13/plywood-gallery-matplotlib-scalebar
+* https://github.com/kolibril13/plywood-gallery-minimal-example
+* https://github.com/kolibril13/plywood-gallery-2D-array
+* https://github.com/kolibril13/plywood-gallery-3D-array
+  
 # Gallery creation
 
 First some background infos: The plywood gallery will turn your Jupyter cell output images into a gallery. Thereby, one can distinguish three cell types: "Header", "Normal" and "Dependent".

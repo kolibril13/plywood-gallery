@@ -7,7 +7,7 @@
     <!-- HTML Meta Tags -->
     <title>{{ project_name }}</title>
     <meta name="description" content="{{ description }}">
-    
+
 
     <!-- OpenGraph Meta Tags -->
     <meta property="og:url" content="{{repository_url}}">
@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="{{ preview_image }}">
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-        
+
 
 
 
@@ -307,8 +307,7 @@
         </div>
         <div id="gallery_container">
             <template gallery-item-template>
-                <img class='gallery_entry' src='' data-code='' style='width: auto;'
-                    onclick='displayCode(this);'>
+                <img class='gallery_entry' src='' data-code='' style='width: auto;' onclick='displayCode(this);'>
             </template>
 
             <template heading-template>
@@ -333,8 +332,7 @@
                         </div>
                     </td>
                     <td class="info_version">
-                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
-                                href="{{repository_url}}"><span
+                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub" href="{{repository_url}}"><span
                                     class="tooltip">user content v{{ user_content_version }} </span></a><br></p>
 
                         <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
@@ -406,7 +404,7 @@
     function displayCode(imgs) {
         // Escape the HTML
         codeSnippet.innerHTML = new Option(imgs.dataset.code).innerHTML
-        
+
         hljs.highlightAll();
     }
 
