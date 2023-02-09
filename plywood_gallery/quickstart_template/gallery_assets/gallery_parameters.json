@@ -1,6 +1,6 @@
 {
   "plywood_metadata": {
-    "plywood_gallery_core_version": "0.0.9"
+    "plywood_gallery_core_version": "0.0.11"
   },
   "plywood_content": {
     "Chapter 1": [
@@ -16,13 +16,13 @@
         "image_path": "gallery_assets/Chapter_2_002_Bar.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;width:240px",
-        "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c= \"b\")"
+        "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c = \"orange\", lw = 7)"
       },
       {
         "image_path": "gallery_assets/Chapter_2_003_HelloWorld.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;width:240px",
-        "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,-20], c= \"b\")"
+        "code": "import matplotlib.pyplot as plt\nplt.plot([1,2], [10,20], c = \"orange\", lw = 5)\nplt.plot([0.5,1.5], [10,20], c = \"blue\", lw = 5)"
       }
     ]
   }
