@@ -447,6 +447,13 @@
 <script>
     const codeSnippet = document.getElementById("code_snippet")
 
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            resetContent();
+        }
+    });
+
     hljs.highlightAll();
     function displayCode(imgs) {
         // Escape the HTML

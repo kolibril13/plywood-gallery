@@ -2,6 +2,7 @@
 
 ## 0.0.13
 
+* Add Escape listener to clear code block area.
 * Add a copy button to the code blocks.
 
 ## 0.0.12
