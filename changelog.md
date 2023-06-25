@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.13
+
+* Add a copy button to the code blocks.
+
 ## 0.0.12
 
 Solved the code escaping problem: https://github.com/kolibril13/plywood-gallery/issues/10
